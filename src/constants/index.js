@@ -8,6 +8,11 @@ export const ROUTES_ARRAY = [
     errorElement: <ErrorPage />,
   },
   {
+    path: "/smart-health",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/signup",
     element: <SignUp />,
     errorElement: <ErrorPage />,
