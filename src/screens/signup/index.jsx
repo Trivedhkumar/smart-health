@@ -13,31 +13,46 @@ import {
   Link,
   Avatar,
   FormControl,
-  FormHelperText,
   InputRightElement,
   FormErrorMessage,
 } from "@chakra-ui/react";
-import { FaUserAlt, FaLock } from "react-icons/fa";
+import { FaUserAlt, FaLock, FaMailBulk } from "react-icons/fa";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
+const CFaMail = chakra(FaMailBulk);
 
 const SignUpScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const validationSchema = z.object({
-    email: z
-      .string({ required_error: ERROR_MESSAGES.requiredField })
-      .email({ message: ERROR_MESSAGES.validEmail }),
-    password: z
-      .string({ required_error: ERROR_MESSAGES.requiredField })
-      .min(3, { message: ERROR_MESSAGES.minLength })
-      .max(8, { message: ERROR_MESSAGES.maxPassword }),
-  });
+  const validationSchema = z
+    .object({
+      email: z
+        .string({ required_error: ERROR_MESSAGES.requiredField })
+        .email({ message: ERROR_MESSAGES.validEmail }),
+      password: z
+        .string({ required_error: ERROR_MESSAGES.requiredField })
+        .min(3, { message: ERROR_MESSAGES.minLength })
+        .max(8, { message: ERROR_MESSAGES.maxPassword }),
+      name: z
+        .string({ required_error: ERROR_MESSAGES.requiredField })
+        .min(3, { message: ERROR_MESSAGES.minLength })
+        .max(30, { message: ERROR_MESSAGES.maxLength }),
+      confirmPassword: z
+        .string({ required_error: ERROR_MESSAGES.requiredField })
+        .min(3, { message: ERROR_MESSAGES.minLength })
+        .max(8, { message: ERROR_MESSAGES.maxPassword }),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      message: "Passwords must match!",
+      path: ["confirmPassword"],
+    });
   const defaultFormValues = {
     email: "",
     password: "",
+    name: "",
+    confirmPassword: "",
   };
   const handleShowClick = () => setShowPassword(!showPassword);
   const {
@@ -78,11 +93,24 @@ const SignUpScreen = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
+              <FormControl isInvalid={errors.name}>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    color="gray.300"
+                    children={<CFaUserAlt color="gray.300" />}
+                  />
+                  <Input {...register("name")} placeholder="Name" />
+                </InputGroup>
+                <FormErrorMessage>
+                  {errors.name && errors.name.message}
+                </FormErrorMessage>
+              </FormControl>
               <FormControl isInvalid={errors.email}>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
-                    children={<CFaUserAlt color="gray.300" />}
+                    children={<CFaMail color="gray.300" />}
                   />
                   <Input
                     {...register("email")}
@@ -114,6 +142,23 @@ const SignUpScreen = () => {
                 </InputGroup>
                 <FormErrorMessage>
                   {errors.password && errors.password.message}
+                </FormErrorMessage>
+              </FormControl>
+              <FormControl isInvalid={errors.confirmPassword}>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    color="gray.300"
+                    children={<CFaLock color="gray.300" />}
+                  />
+                  <Input
+                    {...register("confirmPassword")}
+                    type={"password"}
+                    placeholder="Confirm Password"
+                  />
+                </InputGroup>
+                <FormErrorMessage>
+                  {errors.confirmPassword && errors.confirmPassword.message}
                 </FormErrorMessage>
               </FormControl>
               <Button

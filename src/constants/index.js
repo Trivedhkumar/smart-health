@@ -28,4 +28,5 @@ export const ERROR_MESSAGES = {
   // general errors
   minLength: "Please enter atleast three characters",
   requiredField: "This field is required",
+  maxLength: "This field should not exceed more than 30 characters",
 };
