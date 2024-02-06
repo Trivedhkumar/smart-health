@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Flex,
@@ -10,36 +9,25 @@ import {
   InputLeftElement,
   chakra,
   Box,
-  Link,
   Avatar,
   FormControl,
-  FormHelperText,
-  InputRightElement,
   FormErrorMessage,
 } from "@chakra-ui/react";
-import { FaUserAlt, FaLock } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
 const CFaUserAlt = chakra(FaUserAlt);
-const CFaLock = chakra(FaLock);
 
-const LoginScreen = () => {
-  const [showPassword, setShowPassword] = useState(false);
+const ForgotPasswordScreen = () => {
   const validationSchema = z.object({
     email: z
       .string({ required_error: ERROR_MESSAGES.requiredField })
       .email({ message: ERROR_MESSAGES.validEmail }),
-    password: z
-      .string({ required_error: ERROR_MESSAGES.requiredField })
-      .min(3, { message: ERROR_MESSAGES.minLength })
-      .max(8, { message: ERROR_MESSAGES.maxPassword }),
   });
   const defaultFormValues = {
     email: "",
-    password: "",
   };
-  const handleShowClick = () => setShowPassword(!showPassword);
   const {
     handleSubmit,
     register,
@@ -69,7 +57,7 @@ const LoginScreen = () => {
         alignItems="center"
       >
         <Avatar bg="teal.500" />
-        <Heading color="teal.400">Welcome</Heading>
+        <Heading color="teal.400">Reset Password</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Stack
@@ -94,31 +82,7 @@ const LoginScreen = () => {
                   {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={errors.password}>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300"
-                    children={<CFaLock color="gray.300" />}
-                  />
-                  <Input
-                    {...register("password")}
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                  />
-                  <InputRightElement width="4.5rem">
-                    <Button h="1.75rem" size="sm" onClick={handleShowClick}>
-                      {showPassword ? "Hide" : "Show"}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-                <FormErrorMessage>
-                  {errors.password && errors.password.message}
-                </FormErrorMessage>
-                <FormHelperText textAlign="right">
-                  <Link href="/forgotPassword">forgot password?</Link>
-                </FormHelperText>
-              </FormControl>
+
               <Button
                 isDisabled={isSubmitting}
                 isLoading={isSubmitting}
@@ -128,20 +92,14 @@ const LoginScreen = () => {
                 colorScheme="teal"
                 width="full"
               >
-                Login
+                Reset
               </Button>
             </Stack>
           </form>
         </Box>
       </Stack>
-      <Box>
-        New to us?{" "}
-        <Link color="teal.500" href="/signup">
-          Sign Up
-        </Link>
-      </Box>
     </Flex>
   );
 };
 
-export default LoginScreen;
+export default ForgotPasswordScreen;

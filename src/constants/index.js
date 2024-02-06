@@ -1,4 +1,4 @@
-import { Login, SignUp } from "../routes";
+import { ForgotPassword, Login, SignUp } from "../routes";
 import ErrorPage from "../screens/error/error-page";
 
 export const ROUTES_ARRAY = [
@@ -15,6 +15,11 @@ export const ROUTES_ARRAY = [
   {
     path: "/signup",
     element: <SignUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/forgotPassword",
+    element: <ForgotPassword />,
     errorElement: <ErrorPage />,
   },
 ];
