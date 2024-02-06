@@ -17,6 +17,7 @@ import { FaUserAlt } from "react-icons/fa";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
+import { useNavigate } from "react-router";
 const CFaUserAlt = chakra(FaUserAlt);
 
 const ForgotPasswordScreen = () => {
@@ -28,6 +29,7 @@ const ForgotPasswordScreen = () => {
   const defaultFormValues = {
     email: "",
   };
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -82,18 +84,30 @@ const ForgotPasswordScreen = () => {
                   {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
-
-              <Button
-                isDisabled={isSubmitting}
-                isLoading={isSubmitting}
-                borderRadius={0}
-                type="submit"
-                variant="solid"
-                colorScheme="teal"
-                width="full"
-              >
-                Reset
-              </Button>
+              <Stack direction="row" spacing={4} align="center">
+                <Button
+                  isDisabled={isSubmitting}
+                  isLoading={isSubmitting}
+                  borderRadius={0}
+                  type="submit"
+                  variant="solid"
+                  colorScheme="teal"
+                  width="full"
+                >
+                  Reset
+                </Button>
+                <Button
+                  onClick={() => {
+                    navigate(-1);
+                  }}
+                  borderRadius={0}
+                  variant="solid"
+                  colorScheme="teal"
+                  width="full"
+                >
+                  Go Back
+                </Button>
+              </Stack>
             </Stack>
           </form>
         </Box>
