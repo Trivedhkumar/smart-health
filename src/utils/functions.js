@@ -1,0 +1,25 @@
+import {
+  ADDITIONAL_SERVICES,
+  DIAGNOSTIC_SERVICES,
+  PREVENTATIVE_CARE_SERVICES,
+  PRIMARY_CARE_SERVICES,
+  SERVICE_NAMES,
+  SPECIALITY_SERVICES,
+} from "../constants";
+
+export const getServices = (serviceName) => {
+  switch (serviceName) {
+    case SERVICE_NAMES.PRIMARY_CARE:
+      return PRIMARY_CARE_SERVICES;
+    case SERVICE_NAMES.PREVENTATIVE_CARE:
+      return PREVENTATIVE_CARE_SERVICES;
+    case SERVICE_NAMES.ADDITIONAL:
+      return ADDITIONAL_SERVICES;
+    case SERVICE_NAMES.SPECIALITY:
+      return SPECIALITY_SERVICES;
+    case SERVICE_NAMES.DIAGNOSTIC:
+      return DIAGNOSTIC_SERVICES;
+    default:
+      return PRIMARY_CARE_SERVICES;
+  }
+};
