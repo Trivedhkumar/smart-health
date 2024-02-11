@@ -23,6 +23,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../../components";
+import { getMenuItemsByRole } from "../../utils/functions";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
@@ -57,9 +58,11 @@ const LoginScreen = () => {
     console.log(values);
     navigate("/dashboard", { replace: true });
   };
+  const userMenu = getMenuItemsByRole();
+
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
-      <NavBar />
+      <NavBar menuArray={userMenu} />
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <Stack
           flexDir="column"

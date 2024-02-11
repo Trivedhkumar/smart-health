@@ -30,7 +30,7 @@ import { ImageSlider, NavBar } from "../../components";
 import { ERROR_MESSAGES, SERVICE_NAMES, SLIDEDATA } from "../../constants";
 import { FaCheckCircle, FaMailBulk, FaUserAlt } from "react-icons/fa";
 import { upperCase } from "lodash";
-import { getServices } from "../../utils/functions";
+import { getMenuItemsByRole, getServices } from "../../utils/functions";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -55,7 +55,7 @@ const doctors = [
     image:
       "https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRvY3RvciUyMHNtaWxpbmd8ZW58MHwwfDB8fHww",
     description:
-      "Registered nurse with [Years] of experience, known for her patient advocacy and communication skills.",
+      "Registered nurse with four years of experience, known for her patient advocacy and communication skills.",
   },
 ];
 
@@ -95,9 +95,10 @@ export default function Home() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
+  const userMenu = getMenuItemsByRole();
   return (
     <Box>
-      <NavBar />
+      <NavBar menuArray={userMenu} isLoginButtonRequired={true} />
       <Box px={4}>
         <ImageSlider slides={SLIDEDATA} />
         <Divider />

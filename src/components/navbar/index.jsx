@@ -10,7 +10,11 @@ const NavBar = (props) => {
     <NavBarContainer {...props}>
       <Image src="./logo.png" boxSize={"50px"} />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks menuArray={props.menuArray} isOpen={isOpen} />
+      <MenuLinks
+        menuArray={props.menuArray}
+        isOpen={isOpen}
+        isLoginButtonRequired={props.isLoginButtonRequired}
+      />
     </NavBarContainer>
   );
 };

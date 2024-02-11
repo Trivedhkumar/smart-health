@@ -21,6 +21,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
 import { NavBar } from "../../components";
+import { getMenuItemsByRole } from "../../utils/functions";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const CFaMail = chakra(FaMailBulk);
@@ -69,9 +70,11 @@ const SignUpScreen = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
+  const userMenu = getMenuItemsByRole();
+
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
-      <NavBar />
+      <NavBar menuArray={userMenu} />
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <Stack
           flexDir="column"

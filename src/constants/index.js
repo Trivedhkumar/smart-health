@@ -46,109 +46,155 @@ export const ERROR_MESSAGES = {
 // Menus of different roles
 export const PATIENT_MENU = [
   {
-    title: "Symptom Checker",
+    name: "Symptom Checker",
+    link: "/",
     id: "symptom_checker",
   },
   {
-    title: "Medication Reminders",
+    name: "Medication Reminders",
+    link: "/",
     id: "medication_reminders",
   },
   {
-    title: "Personal Health Records (PHR):",
+    name: "Personal Health Records (PHR):",
+    link: "/",
     id: "personal_health_records",
   },
   {
-    title: "Appointment Management",
+    name: "Appointment Management",
+    link: "/",
     id: "appointment_management",
   },
   {
-    title: "Community Interaction",
+    name: "Community Interaction",
+    link: "/",
     id: "community_interaction",
   },
   {
-    title: "Prescription Management",
+    name: "Prescription Management",
+    link: "/",
     id: "prescription_management",
   },
 ];
 
 export const HEALTHCARE_PROVIDERS_MENU = [
   {
-    title: "E-Prescriptions",
+    name: "E-Prescriptions",
+    link: "/",
     id: "e_prescriptions",
   },
   {
-    title: "Appointment Management",
+    name: "Appointment Management",
+    link: "/",
     id: "appointment_management",
   },
   {
-    title: "Access to Patient Health Records",
+    name: "Access to Patient Health Records",
+    link: "/",
     id: "access_to_patient_health_records",
   },
   {
-    title: "Secure Messaging",
+    name: "Secure Messaging",
+    link: "/",
     id: "secure_messaging",
   },
   {
-    title: "Professional Collaboration",
+    name: "Professional Collaboration",
+    link: "/",
     id: "professional_collaboration",
   },
   {
-    title: "Analytics Dashboard",
+    name: "Analytics Dashboard",
+    link: "/",
     id: "analytics_dashboard",
   },
 ];
 export const ADMINISTRATOR_MENU = [
   {
-    title: "User Management",
+    name: "User Management",
+    link: "/",
     id: "user_management",
   },
   {
-    title: "Healthcare Provider Management",
+    name: "Healthcare Provider Management",
+    link: "/",
     id: "healthcare_provider_management",
   },
   {
-    title: "System Configuration",
+    name: "System Configuration",
+    link: "/",
     id: "system_configuration",
   },
   {
-    title: "Data Oversight",
+    name: "Data Oversight",
+    link: "/",
     id: "data_oversight",
   },
   {
-    title: "Report Generation",
+    name: "Report Generation",
+    link: "/",
     id: "report_generation",
   },
 ];
 export const PHARMACIST_MENU = [
   {
-    title: "Medication Dispensation",
+    name: "Medication Dispensation",
+    link: "/",
     id: "medication_dispensation",
   },
   {
-    title: "Medication History",
+    name: "Medication History",
+    link: "/",
     id: "medication_history",
   },
   {
-    title: "Communication",
+    name: "Communication",
+    link: "/",
     id: "communication",
   },
 ];
 export const HEALTH_ADMINISTRATOR_MENU = [
   {
-    title: "Facility Management",
+    name: "Facility Management",
+    link: "/",
     id: "facility_management",
   },
   {
-    title: "Staff Coordination",
+    name: "Staff Coordination",
+    link: "/",
     id: "staff_coordination",
   },
   {
-    title: "Compliance Oversight",
+    name: "Compliance Oversight",
+    link: "/",
     id: "compliance_oversight",
   },
   {
-    title: "Incident Response",
+    name: "Incident Response",
+    link: "/",
     id: "incident_response",
+  },
+];
+export const HOME_MENU = [
+  {
+    name: "HOME",
+    link: "/#",
+    id: "home",
+  },
+  {
+    name: "SERVICES",
+    link: "/#services",
+    id: "services",
+  },
+  {
+    name: "ABOUT US",
+    link: "/#aboutus",
+    id: "about_us",
+  },
+  {
+    name: "CONTACT US",
+    link: "/#contactus",
+    id: "contact_us",
   },
 ];
 // Roles of users

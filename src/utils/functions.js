@@ -1,8 +1,15 @@
 import {
   ADDITIONAL_SERVICES,
+  ADMINISTRATOR_MENU,
   DIAGNOSTIC_SERVICES,
+  HEALTHCARE_PROVIDERS_MENU,
+  HEALTH_ADMINISTRATOR_MENU,
+  HOME_MENU,
+  PATIENT_MENU,
+  PHARMACIST_MENU,
   PREVENTATIVE_CARE_SERVICES,
   PRIMARY_CARE_SERVICES,
+  ROLES,
   SERVICE_NAMES,
   SPECIALITY_SERVICES,
 } from "../constants";
@@ -21,5 +28,21 @@ export const getServices = (serviceName) => {
       return DIAGNOSTIC_SERVICES;
     default:
       return PRIMARY_CARE_SERVICES;
+  }
+};
+export const getMenuItemsByRole = (role) => {
+  switch (role) {
+    case ROLES.ADMINISTRATOR:
+      return ADMINISTRATOR_MENU;
+    case ROLES.HEALTHCARE_PROVIDERS:
+      return HEALTHCARE_PROVIDERS_MENU;
+    case ROLES.HEALTH_ADMINISTRATOR:
+      return HEALTH_ADMINISTRATOR_MENU;
+    case ROLES.PATIENT:
+      return PATIENT_MENU;
+    case ROLES.PHARMACIST:
+      return PHARMACIST_MENU;
+    default:
+      return HOME_MENU;
   }
 };
