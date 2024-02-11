@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <NavBarContainer {...props}>
       <Image src="./logo.png" boxSize={"50px"} />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks menuArray={props.menuArray} isOpen={isOpen} />
     </NavBarContainer>
   );
 };
@@ -55,7 +55,11 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({
+  isOpen,
+  menuArray = [],
+  isLoginButtonRequired = false,
+}) => {
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -68,24 +72,25 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to="/#">HOME</MenuItem>
-        <MenuItem to="/#services"> SERVICES </MenuItem>
-        <MenuItem to="/#aboutus"> ABOUT US </MenuItem>
-        <MenuItem to="/#contactus"> CONTACT US </MenuItem>
-        <MenuItem to="/login" isLast>
-          <Button
-            size="sm"
-            rounded="md"
-            color={"teal"}
-            bg={"white"}
-            _hover={{
-              color: "teal.900",
-              bg: "teal.50",
-            }}
-          >
-            LOGIN
-          </Button>
-        </MenuItem>
+        {menuArray.map((menuItem) => (
+          <MenuItem to={menuItem.link}>{menuItem.name}</MenuItem>
+        ))}
+        {isLoginButtonRequired && (
+          <MenuItem to="/login" isLast>
+            <Button
+              size="sm"
+              rounded="md"
+              color={"teal"}
+              bg={"white"}
+              _hover={{
+                color: "teal.900",
+                bg: "teal.50",
+              }}
+            >
+              LOGIN
+            </Button>
+          </MenuItem>
+        )}
       </Stack>
     </Box>
   );

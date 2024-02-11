@@ -55,7 +55,7 @@ const LoginScreen = () => {
   const onSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
-    navigate("home");
+    navigate("/dashboard", { replace: true });
   };
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">

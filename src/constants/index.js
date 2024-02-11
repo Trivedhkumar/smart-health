@@ -1,4 +1,4 @@
-import { ForgotPassword, Home, Login, SignUp } from "../routes";
+import { Dashboard, ForgotPassword, Home, Login, SignUp } from "../routes";
 import ErrorPage from "../screens/error/error-page";
 // routes
 export const ROUTES_ARRAY = [
@@ -24,6 +24,11 @@ export const ROUTES_ARRAY = [
     errorElement: <ErrorPage />,
   },
   // protected routes
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    errorElement: <ErrorPage />,
+  },
 ];
 // error messages
 export const ERROR_MESSAGES = {
