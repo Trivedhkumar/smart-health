@@ -11,7 +11,7 @@ const NavBar = (props) => {
       <Image src="./logo.png" boxSize={"50px"} />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks
-        menuArray={props.menuArray}
+        menuarray={props.menuarray}
         isOpen={isOpen}
         isLoginButtonRequired={props.isLoginButtonRequired}
       />
@@ -61,7 +61,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
 
 const MenuLinks = ({
   isOpen,
-  menuArray = [],
+  menuarray = [],
   isLoginButtonRequired = false,
 }) => {
   return (
@@ -76,8 +76,10 @@ const MenuLinks = ({
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        {menuArray.map((menuItem) => (
-          <MenuItem to={menuItem.link}>{menuItem.name}</MenuItem>
+        {menuarray.map((menuItem) => (
+          <MenuItem key={menuItem.link + menuItem.name} to={menuItem.link}>
+            {menuItem.name}
+          </MenuItem>
         ))}
         {isLoginButtonRequired && (
           <MenuItem to="/login" isLast>

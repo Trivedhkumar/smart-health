@@ -98,7 +98,7 @@ export default function Home() {
   const userMenu = getMenuItemsByRole();
   return (
     <Box>
-      <NavBar menuArray={userMenu} isLoginButtonRequired={true} />
+      <NavBar menuarray={userMenu} isLoginButtonRequired={true} />
       <Box px={4}>
         <ImageSlider slides={SLIDEDATA} />
         <Divider />

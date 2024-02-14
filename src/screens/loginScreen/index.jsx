@@ -36,8 +36,7 @@ const LoginScreen = () => {
       .email({ message: ERROR_MESSAGES.validEmail }),
     password: z
       .string({ required_error: ERROR_MESSAGES.requiredField })
-      .min(3, { message: ERROR_MESSAGES.minLength })
-      .max(8, { message: ERROR_MESSAGES.maxPassword }),
+      .min(3, { message: ERROR_MESSAGES.minLength }),
   });
   const defaultFormValues = {
     email: "",
@@ -56,13 +55,13 @@ const LoginScreen = () => {
   const onSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
-    navigate("/dashboard", { replace: true });
+    navigate("/dashboard");
   };
   const userMenu = getMenuItemsByRole();
 
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
-      <NavBar menuArray={userMenu} />
+      <NavBar menuarray={userMenu} />
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <Stack
           flexDir="column"
