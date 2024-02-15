@@ -71,7 +71,7 @@ const SignUpScreen = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+  const userMenu = getMenuItemsByRole(ROLES.GUEST);
 
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">

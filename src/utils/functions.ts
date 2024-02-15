@@ -42,6 +42,8 @@ export const getMenuItemsByRole = (role: any) => {
       return PATIENT_MENU;
     case ROLES.PHARMACIST:
       return PHARMACIST_MENU;
+    case ROLES.GUEST:
+      return HOME_MENU;
     default:
       return HOME_MENU;
   }
