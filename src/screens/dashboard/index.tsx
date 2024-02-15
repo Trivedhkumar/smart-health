@@ -59,7 +59,7 @@ const DashboardScreen = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
     reset,
   } = useForm<ValidationSchema>({
     mode: "onBlur",

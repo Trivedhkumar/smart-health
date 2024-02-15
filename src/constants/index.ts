@@ -17,32 +17,32 @@ export const ERROR_MESSAGES = {
 export const PATIENT_MENU = [
   {
     name: "Symptom Checker",
-    link: "/",
+    link: "/dashboard",
     id: "symptom_checker",
   },
   {
     name: "Medication Reminders",
-    link: "/",
+    link: "/medicationreminders",
     id: "medication_reminders",
   },
   {
     name: "Personal Health Records (PHR):",
-    link: "/",
+    link: "/personalhealthrecords",
     id: "personal_health_records",
   },
   {
     name: "Appointment Management",
-    link: "/",
+    link: "/appointmentmanagement",
     id: "appointment_management",
   },
   {
     name: "Community Interaction",
-    link: "/",
+    link: "/communityinteraction",
     id: "community_interaction",
   },
   {
     name: "Prescription Management",
-    link: "/",
+    link: "/prescriptionmanagement",
     id: "prescription_management",
   },
 ];
@@ -50,17 +50,17 @@ export const PATIENT_MENU = [
 export const HEALTHCARE_PROVIDERS_MENU = [
   {
     name: "E-Prescriptions",
-    link: "/",
+    link: "/eprescriptions",
     id: "e_prescriptions",
   },
   {
     name: "Appointment Management",
-    link: "/",
+    link: "/appointmentmanagement",
     id: "appointment_management",
   },
   {
     name: "Access to Patient Health Records",
-    link: "/",
+    link: "/accesstopatienthealthrecords",
     id: "access_to_patient_health_records",
   },
   {

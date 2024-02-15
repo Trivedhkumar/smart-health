@@ -10,6 +10,7 @@ import {
   VStack,
   HStack,
 } from "@chakra-ui/react";
+import React from "react";
 
 const SidebarContent = ({ onClick }) => (
   <VStack>

@@ -1,14 +1,20 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack, Image } from "@chakra-ui/react";
-
-const NavBar = (props) => {
+interface Props {
+  menuarray: {
+    name: string;
+    link: string;
+    id: string;
+  }[];
+  isLoginButtonRequired?: boolean;
+}
+const NavBar = (props: Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-
   return (
     <NavBarContainer {...props}>
-      <Image src="./logo.png" boxSize={"50px"} />
+      <Image src="https://i.ibb.co/7NZpfBQ/logo.png" boxSize={"50px"} />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks
         menuarray={props.menuarray}
@@ -49,7 +55,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
     <Link href={to}>
       <Text display="block" {...rest}>

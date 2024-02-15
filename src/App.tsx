@@ -1,33 +1,58 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Dashboard, ForgotPassword, Home, Login, SignUp } from "./routes";
-import { ErrorPage } from "./screens";
+import {
+  CommunityInteractionDetailsScreen,
+  CommunityInteractionScreen,
+  DashboardScreen,
+  ErrorPage,
+  ForgotPasswordScreen,
+  HomeScreen,
+  LoginScreen,
+  MedicationRemainderScreen,
+  SignUpScreen,
+} from "./screens";
+import AppointmentManagementScreen from "./screens/appointment";
 const ROUTES_ARRAY = [
   {
     path: "/login",
-    element: <Login />,
+    element: <LoginScreen />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/signup",
-    element: <SignUp />,
+    element: <SignUpScreen />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/forgotPassword",
-    element: <ForgotPassword />,
+    element: <ForgotPasswordScreen />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/",
-    element: <Home />,
+    element: <HomeScreen />,
     errorElement: <ErrorPage />,
   },
   // protected routes
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <DashboardScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/medicationreminders",
+    element: <MedicationRemainderScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/communityinteraction",
+    element: <CommunityInteractionScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/appointmentmanagement",
+    element: <AppointmentManagementScreen />,
     errorElement: <ErrorPage />,
   },
 ];

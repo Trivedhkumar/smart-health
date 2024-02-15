@@ -1,0 +1,73 @@
+export const QUESTIONS = [
+  {
+    id: 1,
+    title: "How can I find a good primary care doctor in my area?",
+    body: "I'm new to the city and not sure where to start looking. Any recommendations?",
+    author: "Sarah",
+    timestamp: new Date(),
+  },
+  {
+    id: 2,
+    title: "What kind of health insurance coverage do I need?",
+    body: "I'm confused by all the different options and don't know what's right for me.",
+    author: "John",
+    timestamp: new Date(),
+  },
+  {
+    id: 3,
+    title: "Can I afford to go to the doctor?",
+    body: "I don't have a lot of money and I'm worried about the cost of healthcare.",
+    author: "Anonymous",
+    timestamp: new Date(),
+  },
+  {
+    id: 4,
+    title: "What are my rights as a patient?",
+    body: "I want to make sure I'm getting the best care possible, but I don't know what my rights are.",
+    author: "Mary",
+    timestamp: new Date(),
+  },
+  {
+    id: 5,
+    title: "What alternative therapies are available for my condition?",
+    body: "I'm interested in exploring options beyond traditional medicine.",
+    author: "David",
+    timestamp: new Date(),
+  },
+  {
+    id: 6,
+    title: "How can I stay healthy on a budget?",
+    body: "I want to take care of my health but I can't afford expensive gym memberships or supplements.",
+    author: "Emma",
+    timestamp: new Date(),
+  },
+  {
+    id: 7,
+    title:
+      "What are the ethical concerns surrounding new medical technologies?",
+    body: "I'm worried about the potential risks of things like gene editing and artificial intelligence in healthcare.",
+    author: "Peter",
+    timestamp: new Date(),
+  },
+  {
+    id: 8,
+    title: "How can we improve access to healthcare for everyone?",
+    body: "I believe healthcare should be a right, not a privilege. What can we do to make it more accessible?",
+    author: "Alice",
+    timestamp: new Date(),
+  },
+  {
+    id: 9,
+    title: "What are the latest advancements in healthcare?",
+    body: "I'm interested in learning about new treatments and technologies that are changing the medical landscape.",
+    author: "Michael",
+    timestamp: new Date(),
+  },
+  {
+    id: 10,
+    title: "What are my options for mental health care?",
+    body: "I'm struggling with my mental health and need to find help.",
+    author: "Anonymous",
+    timestamp: new Date(),
+  },
+];
