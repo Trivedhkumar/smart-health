@@ -19,9 +19,10 @@ import {
 import { FaUserAlt, FaLock, FaMailBulk } from "react-icons/fa";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ERROR_MESSAGES } from "../../constants";
+import { ERROR_MESSAGES, ROLES } from "../../constants";
 import { NavBar } from "../../components";
 import { getMenuItemsByRole } from "../../utils/functions";
+import React from "react";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const CFaMail = chakra(FaMailBulk);
@@ -70,7 +71,7 @@ const SignUpScreen = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
-  const userMenu = getMenuItemsByRole();
+  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
 
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
@@ -92,7 +93,7 @@ const SignUpScreen = () => {
                 backgroundColor="whiteAlpha.900"
                 boxShadow="md"
               >
-                <FormControl isInvalid={errors.name}>
+                <FormControl isInvalid={!!errors.name}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -105,7 +106,7 @@ const SignUpScreen = () => {
                     {errors.name && errors.name.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.email}>
+                <FormControl isInvalid={!!errors.email}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -121,7 +122,7 @@ const SignUpScreen = () => {
                     {errors.email && errors.email.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.password}>
+                <FormControl isInvalid={!!errors.password}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -143,7 +144,7 @@ const SignUpScreen = () => {
                     {errors.password && errors.password.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.confirmPassword}>
+                <FormControl isInvalid={!!errors.confirmPassword}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"

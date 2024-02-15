@@ -18,6 +18,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ERROR_MESSAGES } from "../../constants";
 import { useNavigate } from "react-router";
+import React from "react";
 const CFaUserAlt = chakra(FaUserAlt);
 
 const ForgotPasswordScreen = () => {
@@ -68,7 +69,7 @@ const ForgotPasswordScreen = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-              <FormControl isInvalid={errors.email}>
+              <FormControl isInvalid={!!errors.email}>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"

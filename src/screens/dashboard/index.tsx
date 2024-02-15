@@ -21,6 +21,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CustomModal } from "../../components/modal";
 import { useState } from "react";
+import React from "react";
 const symptomOptions = [
   {
     label: "Fever",
@@ -50,6 +51,8 @@ const symptomSchema = z.object({
 const validationSchema = z.object({
   symptoms: z.array(symptomSchema),
 });
+export type ValidationSchema = z.infer<typeof validationSchema>;
+
 const defaultFormValues = { symptoms: [] };
 const DashboardScreen = () => {
   const [showModal, setShowModal] = useState(false);
@@ -58,12 +61,12 @@ const DashboardScreen = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm({
+  } = useForm<ValidationSchema>({
     mode: "onBlur",
     defaultValues: defaultFormValues,
     resolver: zodResolver(validationSchema),
   });
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: ValidationSchema) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log("values");

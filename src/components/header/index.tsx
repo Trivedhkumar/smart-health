@@ -1,7 +1,12 @@
 import { Box, Center, IconButton, Text, Flex, chakra } from "@chakra-ui/react";
+import React from "react";
+import { FC } from "react";
 import { FaChevronRight } from "react-icons/fa";
-
-const Header = ({ showSidebarButton = true, onShowSidebar }) => {
+interface Props {
+  showSidebarButton: boolean;
+  onShowSidebar: () => void;
+}
+const Header: FC<Props> = ({ showSidebarButton = true, onShowSidebar }) => {
   const CFaChevronRight = chakra(FaChevronRight);
 
   return (
@@ -13,6 +18,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }) => {
             colorScheme="white"
             variant="outline"
             onClick={onShowSidebar}
+            aria-label={""}
           />
         )}
       </Box>
