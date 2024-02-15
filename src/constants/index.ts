@@ -1,35 +1,5 @@
-import { Dashboard, ForgotPassword, Home, Login, SignUp } from "../routes";
-import ErrorPage from "../screens/error/error-page";
-// routes
-export const ROUTES_ARRAY = [
-  // unprotected routes
-  {
-    path: "/login",
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/signup",
-    element: <SignUp />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/forgotPassword",
-    element: <ForgotPassword />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <ErrorPage />,
-  },
-  // protected routes
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-    errorElement: <ErrorPage />,
-  },
-];
+import { SLIDE_DATA_TYPE } from "./types";
+
 // error messages
 export const ERROR_MESSAGES = {
   // email errors
@@ -206,7 +176,7 @@ export const ROLES = {
   PATIENT: "patient",
 };
 // Corousel Images
-export const SLIDEDATA = [
+export const SLIDEDATA: SLIDE_DATA_TYPE = [
   {
     image:
       "https://images.unsplash.com/photo-1554734867-bf3c00a49371?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

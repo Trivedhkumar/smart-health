@@ -14,7 +14,7 @@ import {
   SPECIALITY_SERVICES,
 } from "../constants";
 
-export const getServices = (serviceName) => {
+export const getServices = (serviceName: any) => {
   switch (serviceName) {
     case SERVICE_NAMES.PRIMARY_CARE:
       return PRIMARY_CARE_SERVICES;
@@ -30,7 +30,7 @@ export const getServices = (serviceName) => {
       return PRIMARY_CARE_SERVICES;
   }
 };
-export const getMenuItemsByRole = (role) => {
+export const getMenuItemsByRole = (role: any) => {
   switch (role) {
     case ROLES.ADMINISTRATOR:
       return ADMINISTRATOR_MENU;

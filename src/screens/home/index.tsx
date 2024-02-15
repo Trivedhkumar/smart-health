@@ -27,7 +27,12 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { ImageSlider, NavBar } from "../../components";
-import { ERROR_MESSAGES, SERVICE_NAMES, SLIDEDATA } from "../../constants";
+import {
+  ERROR_MESSAGES,
+  ROLES,
+  SERVICE_NAMES,
+  SLIDEDATA,
+} from "../../constants";
 import { FaCheckCircle, FaMailBulk, FaUserAlt } from "react-icons/fa";
 import { upperCase } from "lodash";
 import { getMenuItemsByRole, getServices } from "../../utils/functions";
@@ -35,6 +40,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import React from "react";
 const doctors = [
   {
     name: "Robert",
@@ -64,7 +70,7 @@ const defaultFormValues = {
   message: "",
   name: "",
 };
-export default function Home() {
+function HomeScreen() {
   const validationSchema = z.object({
     email: z
       .string({ required_error: ERROR_MESSAGES.requiredField })
@@ -95,7 +101,7 @@ export default function Home() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
-  const userMenu = getMenuItemsByRole();
+  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
   return (
     <Box>
       <NavBar menuarray={userMenu} isLoginButtonRequired={true} />
@@ -264,7 +270,7 @@ export default function Home() {
                     backgroundColor="whiteAlpha.900"
                     boxShadow="md"
                   >
-                    <FormControl isInvalid={errors.name}>
+                    <FormControl isInvalid={!!errors.name}>
                       <InputGroup>
                         <InputLeftElement
                           pointerEvents="none"
@@ -277,7 +283,7 @@ export default function Home() {
                         {errors.name && errors.name.message}
                       </FormErrorMessage>
                     </FormControl>
-                    <FormControl isInvalid={errors.email}>
+                    <FormControl isInvalid={!!errors.email}>
                       <InputGroup>
                         <InputLeftElement
                           pointerEvents="none"
@@ -293,7 +299,7 @@ export default function Home() {
                         {errors.email && errors.email.message}
                       </FormErrorMessage>
                     </FormControl>
-                    <FormControl isInvalid={errors.message}>
+                    <FormControl isInvalid={!!errors.message}>
                       <InputGroup>
                         <InputLeftElement
                           pointerEvents="none"
@@ -329,3 +335,4 @@ export default function Home() {
     </Box>
   );
 }
+export default HomeScreen;

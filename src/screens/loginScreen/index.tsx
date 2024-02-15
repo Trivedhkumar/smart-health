@@ -20,10 +20,11 @@ import {
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ERROR_MESSAGES } from "../../constants";
+import { ERROR_MESSAGES, ROLES } from "../../constants";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../../components";
 import { getMenuItemsByRole } from "../../utils/functions";
+import React from "react";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
@@ -57,7 +58,7 @@ const LoginScreen = () => {
     console.log(values);
     navigate("/dashboard");
   };
-  const userMenu = getMenuItemsByRole();
+  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
 
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
@@ -79,7 +80,7 @@ const LoginScreen = () => {
                 backgroundColor="whiteAlpha.900"
                 boxShadow="md"
               >
-                <FormControl isInvalid={errors.email}>
+                <FormControl isInvalid={!!errors.email}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
@@ -95,7 +96,7 @@ const LoginScreen = () => {
                     {errors.email && errors.email.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.password}>
+                <FormControl isInvalid={!!errors.password}>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents="none"
