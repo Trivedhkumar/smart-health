@@ -174,6 +174,7 @@ export const ROLES = {
   ADMINISTRATOR: "administrator",
   HEALTHCARE_PROVIDERS: "healthcare_providers",
   PATIENT: "patient",
+  GUEST: "guest",
 };
 // Corousel Images
 export const SLIDEDATA: SLIDE_DATA_TYPE = [

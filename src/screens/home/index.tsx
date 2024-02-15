@@ -101,7 +101,7 @@ function HomeScreen() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
   };
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+  const userMenu = getMenuItemsByRole(ROLES.GUEST);
   return (
     <Box>
       <NavBar menuarray={userMenu} isLoginButtonRequired={true} />
