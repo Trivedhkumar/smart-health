@@ -51,6 +51,11 @@ const ROUTES_ARRAY = [
     errorElement: <ErrorPage />,
   },
   {
+    path: "/communityinteraction/:questionId",
+    element: <CommunityInteractionDetailsScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/appointmentmanagement",
     element: <AppointmentManagementScreen />,
     errorElement: <ErrorPage />,

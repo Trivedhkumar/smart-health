@@ -18,7 +18,7 @@ import { ROLES } from "../../constants";
 import { CreatableSelect } from "chakra-react-select";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { NEVER, z } from "zod";
 import { CustomModal } from "../../components/modal";
 import { useState } from "react";
 import React from "react";
@@ -49,9 +49,16 @@ const symptomSchema = z.object({
   value: z.string().or(z.number()),
 });
 const validationSchema = z.object({
-  symptoms: z.array(symptomSchema),
+  symptoms: z.array(symptomSchema).superRefine((val, ctx) => {
+    if (val.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Please select at least one ",
+      });
+    }
+  }),
 });
-export type ValidationSchema = z.infer<typeof validationSchema>;
+type ValidationSchema = z.infer<typeof validationSchema>;
 
 const defaultFormValues = { symptoms: [] };
 const DashboardScreen = () => {
@@ -69,7 +76,6 @@ const DashboardScreen = () => {
   const onSubmit = async (values: ValidationSchema) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("values");
     setShowModal(true);
   };
   const closeModal = () => {

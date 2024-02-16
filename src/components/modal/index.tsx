@@ -14,7 +14,6 @@ import { useEffect } from "react";
 
 export function CustomModal({ showModal, closeModal }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log("showModal", showModal);
   useEffect(() => {
     if (showModal) {
       onOpen();
