@@ -20,6 +20,7 @@ import UserManagementScreen from "./screens/userManagement";
 import HealthCareProviderManagement from "./screens/healthCareProviderManagement";
 import SystemConfigurationScreen from "./screens/systemConfiguration";
 import DataOverSightScreen from "./screens/dataOversight";
+import ReportGeneration from "./screens/reportGeneration";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -103,6 +104,11 @@ const ROUTES_ARRAY = [
   {
     path: "/dataoversight",
     element: <DataOverSightScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/reportgeneration",
+    element: <ReportGeneration />,
     errorElement: <ErrorPage />,
   },
 ];
