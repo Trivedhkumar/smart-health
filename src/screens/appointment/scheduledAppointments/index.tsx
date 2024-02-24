@@ -152,10 +152,12 @@ const ScheduledAppointments = () => {
                 <Td>
                   <HStack>
                     <FaEdit
+                      cursor={"pointer"}
                       onClick={() => handleEditAppointment(appointment.id)}
                       color="blue"
                     />
                     <FaTrash
+                      cursor={"pointer"}
                       onClick={() => handleDeleteAppointment(appointment.id)}
                       color="red"
                     />

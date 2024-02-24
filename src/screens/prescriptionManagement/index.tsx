@@ -26,8 +26,11 @@ import { ROLES } from "../../constants";
 import ScheduledAppointments from "../appointment/scheduledAppointments";
 import { MEDICATIONS } from "./constants";
 import MedicationRemainderScreen from "../medicationRemainders";
-
-const PrescriptionManagementScreen = () => {
+import PrescriptionTable from "../../components/prescriptionTable";
+interface Props {
+  navbar?: boolean;
+}
+const PrescriptionManagementScreen = ({ navbar = true }: Props) => {
   const userMenu = getMenuItemsByRole(ROLES.PATIENT);
   const toast = useToast();
   const handleRefillPress = () => {
@@ -40,7 +43,7 @@ const PrescriptionManagementScreen = () => {
   };
   return (
     <Box>
-      <NavBar menuarray={userMenu} />
+      {navbar && <NavBar menuarray={userMenu} />}
       <Stack width={"90%"} margin="auto">
         <Tabs>
           <TabList>
@@ -50,46 +53,7 @@ const PrescriptionManagementScreen = () => {
 
           <TabPanels>
             <TabPanel>
-              <TableContainer>
-                <Table variant="simple">
-                  <Thead>
-                    <Tr>
-                      <Th>Name</Th>
-                      <Th>Dosage</Th>
-                      <Th>Frequency</Th>
-                      <Th>Next refill date</Th>
-                      <Th>Actions</Th>
-                    </Tr>
-                  </Thead>
-                  <Tbody>
-                    {MEDICATIONS.map((medication, index) => (
-                      <Tr key={medication.name + index.toString()}>
-                        <Td>{medication.name}</Td>
-                        <Td>{medication.dosage ?? "N/A"}</Td>
-                        <Td>{medication.frequency ?? "N/A"}</Td>
-                        <Td>{medication.nextRefillDate ?? "N/A"}</Td>
-                        <Td>
-                          <Button
-                            colorScheme={"teal"}
-                            onClick={handleRefillPress}
-                          >
-                            Refill
-                          </Button>
-                        </Td>
-                      </Tr>
-                    ))}
-                  </Tbody>
-                  <Tfoot>
-                    <Tr>
-                      <Th>Name</Th>
-                      <Th>Dosage</Th>
-                      <Th>Frequency</Th>
-                      <Th>Next refill date</Th>
-                      <Th>Actions</Th>
-                    </Tr>
-                  </Tfoot>
-                </Table>
-              </TableContainer>
+              <PrescriptionTable handleRefillPress={handleRefillPress} />
             </TabPanel>
             <TabPanel>
               <MedicationRemainderScreen />

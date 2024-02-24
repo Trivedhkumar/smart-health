@@ -15,6 +15,7 @@ import {
   PrescriptionManagementScreen,
   SignUpScreen,
 } from "./screens";
+import PersonalHealthRecordsDetailsScreen from "./screens/personalHealthRecordDetails";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -61,6 +62,11 @@ const ROUTES_ARRAY = [
   {
     path: "/personalhealthrecords",
     element: <PersonalHealthRecordScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/personalhealthrecords/:id",
+    element: <PersonalHealthRecordsDetailsScreen />,
     errorElement: <ErrorPage />,
   },
   {
