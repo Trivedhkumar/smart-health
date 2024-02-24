@@ -73,7 +73,7 @@ const MedicationRemainderScreen = () => {
     setActivePrescription(arr);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 10000));
+      await new Promise((resolve) => setTimeout(resolve, delay));
       idsRef.current = [...idsRef.current, id];
 
       showNotification("Reminder!", {
@@ -117,14 +117,7 @@ const MedicationRemainderScreen = () => {
   };
   return (
     <Box>
-      <NavBar menuarray={userMenu} />
-      <Stack
-        justifyContent={"center"}
-        alignItems={"center"}
-        maxWidth={"70%"}
-        margin={"auto"}
-        spacing={4}
-      >
+      <Stack maxWidth={"90%"} margin={"auto"} spacing={4}>
         <Heading as={"h3"} size="md">
           Active Prescriptions
         </Heading>

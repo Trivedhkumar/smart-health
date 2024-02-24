@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import {
+  AppointmentManagementScreen,
   CommunityInteractionDetailsScreen,
   CommunityInteractionScreen,
   DashboardScreen,
@@ -10,9 +11,10 @@ import {
   HomeScreen,
   LoginScreen,
   MedicationRemainderScreen,
+  PersonalHealthRecordScreen,
+  PrescriptionManagementScreen,
   SignUpScreen,
 } from "./screens";
-import AppointmentManagementScreen from "./screens/appointment";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -41,11 +43,6 @@ const ROUTES_ARRAY = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/medicationreminders",
-    element: <MedicationRemainderScreen />,
-    errorElement: <ErrorPage />,
-  },
-  {
     path: "/communityinteraction",
     element: <CommunityInteractionScreen />,
     errorElement: <ErrorPage />,
@@ -58,6 +55,17 @@ const ROUTES_ARRAY = [
   {
     path: "/appointmentmanagement",
     element: <AppointmentManagementScreen />,
+    errorElement: <ErrorPage />,
+  },
+
+  {
+    path: "/personalhealthrecords",
+    element: <PersonalHealthRecordScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/prescriptionmanagement",
+    element: <PrescriptionManagementScreen />,
     errorElement: <ErrorPage />,
   },
 ];

@@ -7,6 +7,9 @@ import HomeScreen from "./home";
 import LoginScreen from "./loginScreen";
 import MedicationRemainderScreen from "./medicationRemainders";
 import SignUpScreen from "./signup";
+import PersonalHealthRecordScreen from "./personalHealthRecord";
+import AppointmentManagementScreen from "./appointment";
+import PrescriptionManagementScreen from "./prescriptionManagement";
 
 export {
   DashboardScreen,
@@ -18,4 +21,7 @@ export {
   MedicationRemainderScreen,
   CommunityInteractionDetailsScreen,
   CommunityInteractionScreen,
+  PersonalHealthRecordScreen,
+  AppointmentManagementScreen,
+  PrescriptionManagementScreen,
 };
