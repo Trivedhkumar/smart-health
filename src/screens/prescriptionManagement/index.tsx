@@ -31,7 +31,8 @@ interface Props {
   navbar?: boolean;
 }
 const PrescriptionManagementScreen = ({ navbar = true }: Props) => {
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+
   const toast = useToast();
   const handleRefillPress = () => {
     toast({

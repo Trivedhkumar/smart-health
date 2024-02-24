@@ -19,7 +19,8 @@ const CommunityInteractionDetailsScreen = () => {
   const question = QUESTIONS.find(
     (question) => question.id.toString() === questionId
   );
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
 
   return (
     <Box>

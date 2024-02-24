@@ -27,22 +27,24 @@ import { getMenuItemsByRole } from "../../utils/functions";
 import React from "react";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
+const validationSchema = z.object({
+  email: z
+    .string({ required_error: ERROR_MESSAGES.requiredField })
+    .email({ message: ERROR_MESSAGES.validEmail }),
+  password: z
+    .string({ required_error: ERROR_MESSAGES.requiredField })
+    .min(3, { message: ERROR_MESSAGES.minLength }),
+});
+type ValidationSchema = z.infer<typeof validationSchema>;
+const defaultFormValues = {
+  email: "",
+  password: "",
+};
 
 const LoginScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const validationSchema = z.object({
-    email: z
-      .string({ required_error: ERROR_MESSAGES.requiredField })
-      .email({ message: ERROR_MESSAGES.validEmail }),
-    password: z
-      .string({ required_error: ERROR_MESSAGES.requiredField })
-      .min(3, { message: ERROR_MESSAGES.minLength }),
-  });
-  const defaultFormValues = {
-    email: "",
-    password: "",
-  };
+
   const handleShowClick = () => setShowPassword(!showPassword);
   const {
     handleSubmit,
@@ -53,10 +55,14 @@ const LoginScreen = () => {
     defaultValues: defaultFormValues,
     resolver: zodResolver(validationSchema),
   });
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: ValidationSchema) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
-    navigate("/dashboard");
+    navigate("/dashboard", {
+      state: {
+        email: values.email,
+      },
+    });
   };
   const userMenu = getMenuItemsByRole(ROLES.GUEST);
 

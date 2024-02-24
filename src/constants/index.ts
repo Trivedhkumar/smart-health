@@ -17,7 +17,7 @@ export const ERROR_MESSAGES = {
 export const PATIENT_MENU = [
   {
     name: "Symptom Checker",
-    link: "/dashboard",
+    link: "/symptomchecker",
     id: "symptom_checker",
   },
   {
@@ -77,27 +77,27 @@ export const HEALTHCARE_PROVIDERS_MENU = [
 export const ADMINISTRATOR_MENU = [
   {
     name: "User Management",
-    link: "/",
+    link: "/usermanagement",
     id: "user_management",
   },
   {
     name: "Healthcare Provider Management",
-    link: "/",
+    link: "/healthcareprovidermanagement",
     id: "healthcare_provider_management",
   },
   {
     name: "System Configuration",
-    link: "/",
+    link: "/systemconfiguration",
     id: "system_configuration",
   },
   {
     name: "Data Oversight",
-    link: "/",
+    link: "/dataoversight",
     id: "data_oversight",
   },
   {
     name: "Report Generation",
-    link: "/",
+    link: "/reportgeneration",
     id: "report_generation",
   },
 ];

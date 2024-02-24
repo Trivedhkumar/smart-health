@@ -68,7 +68,9 @@ const defaultFormValues = {
 };
 const PersonalHealthRecordScreen = () => {
   const [records, setRecords] = useState(PERSONAL_HEALTH_RECORDS);
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const navigate = useNavigate();

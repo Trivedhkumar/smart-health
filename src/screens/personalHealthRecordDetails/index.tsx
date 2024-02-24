@@ -39,7 +39,9 @@ const PersonalHealthRecordsDetailsScreen = () => {
       isClosable: true,
     });
   };
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+
   const PHRMedicalHistoryKeys = Object.keys(phrItem.medicalHistory);
   const PHRHealthMetricKeys = Object.keys(phrItem.healthMetrics);
   return (

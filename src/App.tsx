@@ -16,6 +16,8 @@ import {
   SignUpScreen,
 } from "./screens";
 import PersonalHealthRecordsDetailsScreen from "./screens/personalHealthRecordDetails";
+import SymptomChecker from "./screens/symptomChecker";
+import UserManagementScreen from "./screens/userManagement";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -41,6 +43,12 @@ const ROUTES_ARRAY = [
   {
     path: "/dashboard",
     element: <DashboardScreen />,
+    errorElement: <ErrorPage />,
+  },
+  // patient
+  {
+    path: "/symptomchecker",
+    element: <SymptomChecker />,
     errorElement: <ErrorPage />,
   },
   {
@@ -72,6 +80,12 @@ const ROUTES_ARRAY = [
   {
     path: "/prescriptionmanagement",
     element: <PrescriptionManagementScreen />,
+    errorElement: <ErrorPage />,
+  },
+  // admin
+  {
+    path: "/usermanagement",
+    element: <UserManagementScreen />,
     errorElement: <ErrorPage />,
   },
 ];

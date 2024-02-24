@@ -55,7 +55,8 @@ const QuestionList = ({ questions }: Props) => {
 
 const CommunityInteractionScreen = () => {
   const [questions, setQuestions] = useState(QUESTIONS);
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
 
   return (
     <Box>

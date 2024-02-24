@@ -23,7 +23,9 @@ const MedicationRemainderScreen = () => {
   );
   const idsRef = useRef([]);
   const [timeSelected, setTimeSelected] = useState("");
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+
   const toast = useToast();
   const handleTimeSelect = (event) => {
     setTimeSelected(event.target.value);

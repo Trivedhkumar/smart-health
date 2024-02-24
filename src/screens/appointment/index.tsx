@@ -7,7 +7,7 @@ import { ROLES } from "../../constants";
 
 import ScheduledAppointments from "./scheduledAppointments";
 const AppointmentManagementScreen = () => {
-  const userMenu = getMenuItemsByRole(ROLES.PATIENT);
+  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
 
   return (
     <Box>
