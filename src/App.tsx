@@ -18,6 +18,7 @@ import {
 import PersonalHealthRecordsDetailsScreen from "./screens/personalHealthRecordDetails";
 import SymptomChecker from "./screens/symptomChecker";
 import UserManagementScreen from "./screens/userManagement";
+import HealthCareProviderManagement from "./screens/healthCareProviderManagement";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -86,6 +87,11 @@ const ROUTES_ARRAY = [
   {
     path: "/usermanagement",
     element: <UserManagementScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/healthcareprovidermanagement",
+    element: <HealthCareProviderManagement />,
     errorElement: <ErrorPage />,
   },
 ];
