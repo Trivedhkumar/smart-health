@@ -14,7 +14,7 @@ import {
   Tr,
   useToast,
 } from "@chakra-ui/react";
-import { startCase, upperFirst } from "lodash";
+import { startCase } from "lodash";
 import React, { useState } from "react";
 import { NavBar } from "../../components";
 import { getMenuItemsByRole } from "../../utils/functions";

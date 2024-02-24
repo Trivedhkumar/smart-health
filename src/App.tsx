@@ -10,7 +10,6 @@ import {
   ForgotPasswordScreen,
   HomeScreen,
   LoginScreen,
-  MedicationRemainderScreen,
   PersonalHealthRecordScreen,
   PrescriptionManagementScreen,
   SignUpScreen,
@@ -19,6 +18,7 @@ import PersonalHealthRecordsDetailsScreen from "./screens/personalHealthRecordDe
 import SymptomChecker from "./screens/symptomChecker";
 import UserManagementScreen from "./screens/userManagement";
 import HealthCareProviderManagement from "./screens/healthCareProviderManagement";
+import SystemConfigurationScreen from "./screens/systemConfiguration";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -92,6 +92,11 @@ const ROUTES_ARRAY = [
   {
     path: "/healthcareprovidermanagement",
     element: <HealthCareProviderManagement />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/systemconfiguration",
+    element: <SystemConfigurationScreen />,
     errorElement: <ErrorPage />,
   },
 ];
