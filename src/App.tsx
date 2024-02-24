@@ -19,6 +19,7 @@ import SymptomChecker from "./screens/symptomChecker";
 import UserManagementScreen from "./screens/userManagement";
 import HealthCareProviderManagement from "./screens/healthCareProviderManagement";
 import SystemConfigurationScreen from "./screens/systemConfiguration";
+import DataOverSightScreen from "./screens/dataOversight";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -97,6 +98,11 @@ const ROUTES_ARRAY = [
   {
     path: "/systemconfiguration",
     element: <SystemConfigurationScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/dataoversight",
+    element: <DataOverSightScreen />,
     errorElement: <ErrorPage />,
   },
 ];
