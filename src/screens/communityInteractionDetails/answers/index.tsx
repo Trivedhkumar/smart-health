@@ -1,13 +1,4 @@
-import {
-  Box,
-  Accordion,
-  AccordionItem,
-  Heading,
-  Text,
-  Input,
-  Button,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Input, Button, Stack } from "@chakra-ui/react";
 import React from "react";
 import { useState, useEffect } from "react";
 import { ANSWERS } from "./constants";

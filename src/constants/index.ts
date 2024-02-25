@@ -40,6 +40,11 @@ export const PATIENT_MENU = [
     link: "/prescriptionmanagement",
     id: "prescription_management",
   },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
+  },
 ];
 
 export const HEALTHCARE_PROVIDERS_MENU = [
@@ -73,6 +78,11 @@ export const HEALTHCARE_PROVIDERS_MENU = [
     link: "/",
     id: "analytics_dashboard",
   },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
+  },
 ];
 export const ADMINISTRATOR_MENU = [
   {
@@ -100,6 +110,11 @@ export const ADMINISTRATOR_MENU = [
     link: "/reportgeneration",
     id: "report_generation",
   },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
+  },
 ];
 export const PHARMACIST_MENU = [
   {
@@ -116,6 +131,11 @@ export const PHARMACIST_MENU = [
     name: "Communication",
     link: "/",
     id: "communication",
+  },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
   },
 ];
 export const HEALTH_ADMINISTRATOR_MENU = [
@@ -138,6 +158,11 @@ export const HEALTH_ADMINISTRATOR_MENU = [
     name: "Incident Response",
     link: "/",
     id: "incident_response",
+  },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
   },
 ];
 export const HOME_MENU = [

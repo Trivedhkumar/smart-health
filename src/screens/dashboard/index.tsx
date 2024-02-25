@@ -20,16 +20,17 @@ const DashboardScreen = () => {
       ? navigate("/symptomchecker")
       : navigate("/usermanagement");
   }, [location.state.email, navigate]);
-
+  const handleNavigate = (email) => {
+    switch (email) {
+      case "trivedhj@gmail.com":
+        return navigate("/symptomchecker");
+      default:
+        return navigate("/usermanagement");
+    }
+  };
   return (
     <>
-      <Button
-        onClick={
-          location.state.email === "trivedhj@gmail.com"
-            ? () => navigate("/symptomchecker")
-            : () => navigate("/usermanagement")
-        }
-      >
+      <Button onClick={() => handleNavigate(location.state.email)}>
         GO Home
       </Button>
     </>

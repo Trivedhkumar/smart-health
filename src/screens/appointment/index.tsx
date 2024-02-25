@@ -3,7 +3,6 @@ import { Box, Stack } from "@chakra-ui/react";
 
 import { NavBar } from "../../components";
 import { getMenuItemsByRole } from "../../utils/functions";
-import { ROLES } from "../../constants";
 
 import ScheduledAppointments from "./scheduledAppointments";
 const AppointmentManagementScreen = () => {
