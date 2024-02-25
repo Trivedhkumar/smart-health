@@ -47,43 +47,6 @@ export const PATIENT_MENU = [
   },
 ];
 
-export const HEALTHCARE_PROVIDERS_MENU = [
-  {
-    name: "E-Prescriptions",
-    link: "/eprescriptions",
-    id: "e_prescriptions",
-  },
-  {
-    name: "Appointment Management",
-    link: "/appointmentmanagement",
-    id: "appointment_management",
-  },
-  {
-    name: "Access to Patient Health Records",
-    link: "/accesstopatienthealthrecords",
-    id: "access_to_patient_health_records",
-  },
-  {
-    name: "Secure Messaging",
-    link: "/",
-    id: "secure_messaging",
-  },
-  {
-    name: "Professional Collaboration",
-    link: "/",
-    id: "professional_collaboration",
-  },
-  {
-    name: "Analytics Dashboard",
-    link: "/",
-    id: "analytics_dashboard",
-  },
-  {
-    name: "Logout",
-    link: "/",
-    id: "logout",
-  },
-];
 export const ADMINISTRATOR_MENU = [
   {
     name: "User Management",
@@ -119,17 +82,17 @@ export const ADMINISTRATOR_MENU = [
 export const PHARMACIST_MENU = [
   {
     name: "Medication Dispensation",
-    link: "/",
+    link: "/medicationdispensation",
     id: "medication_dispensation",
   },
   {
     name: "Medication History",
-    link: "/",
+    link: "/medicationhistory",
     id: "medication_history",
   },
   {
     name: "Communication",
-    link: "/",
+    link: "/communication",
     id: "communication",
   },
   {
@@ -141,23 +104,60 @@ export const PHARMACIST_MENU = [
 export const HEALTH_ADMINISTRATOR_MENU = [
   {
     name: "Facility Management",
-    link: "/",
+    link: "/facilitymanagement",
     id: "facility_management",
   },
   {
     name: "Staff Coordination",
-    link: "/",
+    link: "/staffcoordination",
     id: "staff_coordination",
   },
   {
     name: "Compliance Oversight",
-    link: "/",
+    link: "/complianceoversight",
     id: "compliance_oversight",
   },
   {
     name: "Incident Response",
-    link: "/",
+    link: "/incidentresponse",
     id: "incident_response",
+  },
+  {
+    name: "Logout",
+    link: "/",
+    id: "logout",
+  },
+];
+export const HEALTHCARE_PROVIDERS_MENU = [
+  {
+    name: "E-Prescriptions",
+    link: "/eprescriptions",
+    id: "e_prescriptions",
+  },
+  {
+    name: "Appointment Management",
+    link: "/appointmentmanagement",
+    id: "appointment_management",
+  },
+  {
+    name: "Access to Patient Health Records",
+    link: "/accesstopatienthealthrecords",
+    id: "access_to_patient_health_records",
+  },
+  {
+    name: "Secure Messaging",
+    link: "/",
+    id: "secure_messaging",
+  },
+  {
+    name: "Professional Collaboration",
+    link: "/",
+    id: "professional_collaboration",
+  },
+  {
+    name: "Analytics Dashboard",
+    link: "/",
+    id: "analytics_dashboard",
   },
   {
     name: "Logout",

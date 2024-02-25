@@ -206,7 +206,7 @@ function HomeScreen() {
               spacing={2}
             >
               {DOCTORS.map((doctor) => (
-                <Card maxW="sm">
+                <Card key={doctor.description} maxW="sm">
                   <CardBody>
                     <Image
                       src={doctor.image}

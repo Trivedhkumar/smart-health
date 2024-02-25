@@ -88,7 +88,7 @@ const MenuLinks = ({
           </MenuItem>
         ))}
         {isLoginButtonRequired && (
-          <MenuItem to="/login" isLast>
+          <MenuItem to="/login">
             <Button
               size="sm"
               rounded="md"

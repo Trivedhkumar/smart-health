@@ -1,15 +1,15 @@
-import CommunityInteractionDetailsScreen from "./communityInteractionDetails";
-import CommunityInteractionScreen from "./communityinteraction";
+import CommunityInteractionDetailsScreen from "./patient/communityinteraction/communityInteractionDetails";
+import CommunityInteractionScreen from "./patient/communityinteraction";
 import DashboardScreen from "./dashboard";
 import ErrorPage from "./error";
 import ForgotPasswordScreen from "./forgotPassword";
 import HomeScreen from "./home";
 import LoginScreen from "./loginScreen";
-import MedicationRemainderScreen from "./medicationRemainders";
+import MedicationRemainderScreen from "./patient/prescriptionManagement/medicationRemainders";
 import SignUpScreen from "./signup";
-import PersonalHealthRecordScreen from "./personalHealthRecord";
-import AppointmentManagementScreen from "./appointment";
-import PrescriptionManagementScreen from "./prescriptionManagement";
+import PersonalHealthRecordScreen from "./patient/personalHealthRecord";
+import AppointmentManagementScreen from "./patient/appointment";
+import PrescriptionManagementScreen from "./patient/prescriptionManagement";
 
 export {
   DashboardScreen,

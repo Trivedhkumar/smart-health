@@ -14,13 +14,14 @@ import {
   PrescriptionManagementScreen,
   SignUpScreen,
 } from "./screens";
-import PersonalHealthRecordsDetailsScreen from "./screens/personalHealthRecordDetails";
-import SymptomChecker from "./screens/symptomChecker";
-import UserManagementScreen from "./screens/userManagement";
-import HealthCareProviderManagement from "./screens/healthCareProviderManagement";
-import SystemConfigurationScreen from "./screens/systemConfiguration";
-import DataOverSightScreen from "./screens/dataOversight";
-import ReportGeneration from "./screens/reportGeneration";
+import PersonalHealthRecordsDetailsScreen from "./screens/patient/personalHealthRecord/personalHealthRecordDetails";
+import SymptomChecker from "./screens/patient/symptomChecker";
+import UserManagementScreen from "./screens/admin/userManagement";
+import HealthCareProviderManagement from "./screens/admin/healthCareProviderManagement";
+import SystemConfigurationScreen from "./screens/admin/systemConfiguration";
+import DataOverSightScreen from "./screens/admin/dataOversight";
+import ReportGeneration from "./screens/admin/reportGeneration";
+import MedicationDispenseScreen from "./screens/pharmacist/medicationDispense";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -109,6 +110,11 @@ const ROUTES_ARRAY = [
   {
     path: "/reportgeneration",
     element: <ReportGeneration />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/medicationdispensation",
+    element: <MedicationDispenseScreen />,
     errorElement: <ErrorPage />,
   },
 ];

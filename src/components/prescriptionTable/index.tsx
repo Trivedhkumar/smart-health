@@ -10,7 +10,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import React from "react";
-import { MEDICATIONS } from "../../screens/prescriptionManagement/constants";
+import { MEDICATIONS } from "../../screens/patient/prescriptionManagement/constants";
 interface Props {
   handleRefillPress: () => void;
 }
