@@ -22,6 +22,7 @@ import SystemConfigurationScreen from "./screens/admin/systemConfiguration";
 import DataOverSightScreen from "./screens/admin/dataOversight";
 import ReportGeneration from "./screens/admin/reportGeneration";
 import MedicationDispenseScreen from "./screens/pharmacist/medicationDispense";
+import MedicationHistory from "./screens/pharmacist/medicalHistory";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -115,6 +116,11 @@ const ROUTES_ARRAY = [
   {
     path: "/medicationdispensation",
     element: <MedicationDispenseScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/medicationhistory",
+    element: <MedicationHistory />,
     errorElement: <ErrorPage />,
   },
 ];
