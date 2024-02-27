@@ -24,6 +24,7 @@ import ReportGeneration from "./screens/admin/reportGeneration";
 import MedicationDispenseScreen from "./screens/pharmacist/medicationDispense";
 import MedicationHistory from "./screens/pharmacist/medicalHistory";
 import CommunicationScreen from "./screens/pharmacist/communication";
+import FacilityManagement from "./screens/healthAdmin/facilityManagement";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -127,6 +128,11 @@ const ROUTES_ARRAY = [
   {
     path: "/communication",
     element: <CommunicationScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/facilitymanagement",
+    element: <FacilityManagement />,
     errorElement: <ErrorPage />,
   },
 ];
