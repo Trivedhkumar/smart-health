@@ -28,86 +28,23 @@ import {
   Select,
   useToast,
 } from "@chakra-ui/react";
-import { FaHospitalAlt, FaTrash } from "react-icons/fa";
+import { FaTrash, FaUserFriends } from "react-icons/fa";
 import { NavBar } from "../../../components";
 import { getMenuItemsByRole } from "../../../utils/functions";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CreatableSelect } from "chakra-react-select";
-import { v4 as uuidv4 } from "uuid";
+import { departments, permissions, roles, staffData } from "./constants";
 
-const facilitiesData = [
-  // Replace with actual facility data
-  {
-    id: uuidv4(),
-    name: "Central Hospital",
-    location: "New York, NY",
-    services: [
-      {
-        label: "Emergency Care",
-        value: "emergency_care",
-      },
-      {
-        label: "Cardiology",
-        value: "cardiology",
-      },
-      {
-        label: "Pediatrics",
-        value: "pediatrics",
-      },
-    ],
-    status: "active",
-  },
-  {
-    id: uuidv4(),
-    name: "East Clinic",
-    location: "Los Angeles, CA",
-    services: [
-      {
-        label: "Family Medicine",
-        value: "family_medicine",
-      },
-      {
-        label: "Dermatology",
-        value: "dermatology",
-      },
-    ],
-    status: "inactive",
-  },
-  // ... add more facilities
-];
-
-const services = [
-  {
-    label: "Emergency Care",
-    value: "emergency_care",
-  },
-  {
-    label: "Cardiology",
-    value: "cardiology",
-  },
-  {
-    label: "Pediatrics",
-    value: "pediatrics",
-  },
-  {
-    label: "Family Medicine",
-    value: "family_medicine",
-  },
-  {
-    label: "Dermatology",
-    value: "dermatology",
-  },
-];
-const serviceSchema = z.object({
+const permissionSchema = z.object({
   label: z.string(),
   value: z.string(),
 });
 const validationSchema = z.object({
   name: z.string().min(1, { message: "Please enter the name" }),
-  location: z.string().min(1, { message: "Please enter the location" }),
-  services: z.array(serviceSchema).superRefine((val, ctx) => {
+
+  permissions: z.array(permissionSchema).superRefine((val, ctx) => {
     if (val.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -115,20 +52,21 @@ const validationSchema = z.object({
       });
     }
   }),
-  status: z.string().min(1, { message: "Please choose a option" }),
+  role: z.string().min(1, { message: "Please choose a option" }),
+  department: z.string().min(1, { message: "Please choose a option" }),
 });
 const defaultFormValues = {
   name: "",
-  location: "",
-  services: [],
-  status: "",
+  department: "",
+  permissions: [],
+  role: "",
 };
 type ValidationSchema = z.infer<typeof validationSchema>;
 
-const FacilityManagement = () => {
-  const [facilities, setFacilities] = useState(facilitiesData);
+const StaffManagement = () => {
+  const [staff, setStaff] = useState(staffData);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedFacility, setSelectedFacility] = useState(null);
+  const [selectedStaff, setselectedStaff] = useState(null);
 
   const {
     handleSubmit,
@@ -141,15 +79,15 @@ const FacilityManagement = () => {
     defaultValues: defaultFormValues,
     resolver: zodResolver(validationSchema),
   });
-  const handleFacilityClick = (facility) => {
-    setSelectedFacility(facility);
+  const handleEditStaff = (staff) => {
+    setselectedStaff(staff);
     onOpen();
   };
-  const handleDeleteFacility = (id) => {
-    setFacilities(facilities.filter((facality) => facality.id !== id));
+  const handleDeleteStaff = (id) => {
+    setStaff(staff.filter((facality) => facality.id !== id));
     toast({
-      title: "Facility deleted successfully",
-      description: "We've deleted the facility details for you.",
+      title: "Staff deleted successfully",
+      description: "We've deleted the staff details for you.",
       status: "error",
       duration: 3000,
       isClosable: true,
@@ -164,18 +102,18 @@ const FacilityManagement = () => {
     // Implement form validation and submission logic (optional)
     console.log("Values", values);
     handleCloseModal();
-    if (selectedFacility) {
+    if (selectedStaff) {
       toast({
-        title: "Facility updated successfully",
-        description: "We've updated the facility details for you.",
+        title: "Staff updated successfully",
+        description: "We've updated the staff details for you.",
         status: "success",
         duration: 3000,
         isClosable: true,
       });
     } else {
       toast({
-        title: "Facility added successfully",
-        description: "We've added the facility details for you.",
+        title: "Staff added successfully",
+        description: "We've added the staff details for you.",
         status: "success",
         duration: 3000,
         isClosable: true,
@@ -185,18 +123,18 @@ const FacilityManagement = () => {
     // setFacilities([
     //   {
     //     id: uuidv4(),
-    //     location: values.location,
+    //     department: values.department,
     //     name: values.name,
-    //     services: {
+    //     permissions: {
 
     //     }
-    //     status: values.status,
+    //     role: values.role,
     //   },
     // ]);
   };
   const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
   const handleAddFacility = () => {
-    setSelectedFacility(null);
+    setselectedStaff(null);
     onOpen();
   };
   return (
@@ -204,29 +142,30 @@ const FacilityManagement = () => {
       <NavBar menuarray={userMenu} />
       <Stack maxWidth={"90%"} margin={"auto"} spacing={4}>
         <Heading as="h1" mb={4}>
-          Facility Management
+          Staff Coordination
         </Heading>
         <Box mb={4}>
           <TableContainer>
             <Table variant="simple">
               <Thead>
                 <Tr>
-                  <Th>Facility</Th>
-                  <Th>Services Offered</Th>
-                  <Th>Operational Status</Th>
+                  <Th>Name</Th>
+                  <Th>Permissions</Th>
+                  <Th>Role</Th>
+                  <Th>Department</Th>
                   <Th>Actions</Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {facilities.map((facility) => (
-                  <Tr key={facility.id}>
+                {staff.map((staff) => (
+                  <Tr key={staff.id}>
                     <Td>
                       <Stack>
                         <HStack>
-                          <FaHospitalAlt />
-                          <Text fontWeight="bold">{facility.name}</Text>
+                          <FaUserFriends />
+                          <Text fontWeight="bold">{staff.name}</Text>
                         </HStack>
-                        <Text fontSize="sm">{facility.location}</Text>
+                        <Text fontSize="sm">{staff.department}</Text>
                       </Stack>
                     </Td>
                     <Td>
@@ -235,33 +174,30 @@ const FacilityManagement = () => {
                         spacing={2}
                         flexWrap={"wrap"}
                       >
-                        {facility.services.map((service) => (
+                        {staff.permissions.map((permission) => (
                           <Badge
-                            key={service.value}
+                            key={permission.value}
                             variant="outline"
                             colorScheme="teal"
                           >
-                            {service.label}
+                            {permission.label}
                           </Badge>
                         ))}
                       </HStack>
                     </Td>
                     <Td>
-                      <Badge
-                        variant={
-                          facility.status === "active" ? "success" : "warning"
-                        }
-                      >
-                        {facility.status}
-                      </Badge>
+                      <Text>{staff.role}</Text>
+                    </Td>
+                    <Td>
+                      <Text>{staff.department}</Text>
                     </Td>
                     <Td>
                       <HStack spacing={2}>
-                        <Button onClick={() => handleFacilityClick(facility)}>
+                        <Button onClick={() => handleEditStaff(staff)}>
                           Edit
                         </Button>
                         <FaTrash
-                          onClick={() => handleDeleteFacility(facility.id)}
+                          onClick={() => handleDeleteStaff(staff.id)}
                           cursor={"pointer"}
                           color="red"
                         />
@@ -275,24 +211,24 @@ const FacilityManagement = () => {
         </Box>
 
         <Button colorScheme={"teal"} onClick={handleAddFacility}>
-          Add Facility
+          Add Staff
         </Button>
 
         <Modal isOpen={isOpen} onClose={handleCloseModal}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>
-              {!selectedFacility ? "Add Facility" : "Edit Facility"}
+              {!selectedStaff ? "Add Staff" : "Edit Staff"}
               <ModalCloseButton />
             </ModalHeader>
             <ModalBody>
-              {/* Form fields for name, location, services, status, contact, hours */}
+              {/* Form fields for name, department, permissions, role, contact, hours */}
               <form>
                 <FormControl>
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Enter facility name"
+                    placeholder="Enter staff name"
                     {...register("name")}
                   />
                   <FormHelperText color={"red"}>
@@ -300,24 +236,30 @@ const FacilityManagement = () => {
                   </FormHelperText>
                 </FormControl>
                 <FormControl>
-                  <Input
-                    id="location"
-                    name="location"
-                    placeholder="Enter location name"
-                    {...register("location")}
-                  />
+                  <Select
+                    {...register("department")}
+                    name="department"
+                    placeholder="Select Role"
+                    mb={4}
+                  >
+                    {departments.map((department) => (
+                      <option key={department.id} value={department.value}>
+                        {department.label}
+                      </option>
+                    ))}
+                  </Select>
                   <FormHelperText color={"red"}>
-                    {errors?.location?.message}
+                    {errors?.department?.message}
                   </FormHelperText>
                 </FormControl>
                 <Controller
                   control={control}
-                  name="services"
+                  name="permissions"
                   render={({
                     field: { onChange, onBlur, value, name, ref },
                     fieldState: { invalid, error },
                   }) => (
-                    <FormControl py={4} isInvalid={invalid} id="services">
+                    <FormControl py={4} isInvalid={invalid} id="permissions">
                       <CreatableSelect
                         isMulti
                         name={name}
@@ -325,8 +267,8 @@ const FacilityManagement = () => {
                         onChange={onChange}
                         onBlur={onBlur}
                         value={value}
-                        options={services}
-                        placeholder="Select services"
+                        options={permissions}
+                        placeholder="Select permissions"
                         closeMenuOnSelect={false}
                       />
 
@@ -338,16 +280,19 @@ const FacilityManagement = () => {
                 />
                 <FormControl>
                   <Select
-                    {...register("status")}
-                    name="status"
-                    placeholder="Select Operational Status"
+                    {...register("role")}
+                    name="role"
+                    placeholder="Select Role"
                     mb={4}
                   >
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
+                    {roles.map((role) => (
+                      <option key={role.id} value={role.value}>
+                        {role.label}
+                      </option>
+                    ))}
                   </Select>
                   <FormHelperText color={"red"}>
-                    {errors?.status?.message}
+                    {errors?.role?.message}
                   </FormHelperText>
                 </FormControl>
                 {/* ... other form fields */}
@@ -360,7 +305,7 @@ const FacilityManagement = () => {
                   colorScheme={"teal"}
                   onClick={handleSubmit(handleFormSubmit)}
                 >
-                  {!selectedFacility ? "Add Facility" : "Edit Facility"}
+                  {!selectedStaff ? "Add Staff" : "Edit Staff"}
                 </Button>
               </form>
             </ModalBody>
@@ -370,4 +315,4 @@ const FacilityManagement = () => {
     </Box>
   );
 };
-export default FacilityManagement;
+export default StaffManagement;

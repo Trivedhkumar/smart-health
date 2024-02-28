@@ -25,6 +25,7 @@ import MedicationDispenseScreen from "./screens/pharmacist/medicationDispense";
 import MedicationHistory from "./screens/pharmacist/medicalHistory";
 import CommunicationScreen from "./screens/pharmacist/communication";
 import FacilityManagement from "./screens/healthAdmin/facilityManagement";
+import StaffManagement from "./screens/healthAdmin/staffManagement";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -133,6 +134,11 @@ const ROUTES_ARRAY = [
   {
     path: "/facilitymanagement",
     element: <FacilityManagement />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/staffcoordination",
+    element: <StaffManagement />,
     errorElement: <ErrorPage />,
   },
 ];
