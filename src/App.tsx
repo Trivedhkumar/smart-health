@@ -27,6 +27,7 @@ import CommunicationScreen from "./screens/pharmacist/communication";
 import FacilityManagement from "./screens/healthAdmin/facilityManagement";
 import StaffManagement from "./screens/healthAdmin/staffManagement";
 import IncidentResponse from "./screens/healthAdmin/incidentResponse";
+import ComplainceOversight from "./screens/healthAdmin/complainceOversight";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -149,7 +150,7 @@ const ROUTES_ARRAY = [
   },
   {
     path: "/complianceoversight",
-    element: <DataOverSightScreen />,
+    element: <ComplainceOversight />,
     errorElement: <ErrorPage />,
   },
 ];
