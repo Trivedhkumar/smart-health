@@ -26,6 +26,7 @@ import MedicationHistory from "./screens/pharmacist/medicalHistory";
 import CommunicationScreen from "./screens/pharmacist/communication";
 import FacilityManagement from "./screens/healthAdmin/facilityManagement";
 import StaffManagement from "./screens/healthAdmin/staffManagement";
+import IncidentResponse from "./screens/healthAdmin/incidentResponse";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -139,6 +140,16 @@ const ROUTES_ARRAY = [
   {
     path: "/staffcoordination",
     element: <StaffManagement />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/incidentresponse",
+    element: <IncidentResponse />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/complianceoversight",
+    element: <DataOverSightScreen />,
     errorElement: <ErrorPage />,
   },
 ];
