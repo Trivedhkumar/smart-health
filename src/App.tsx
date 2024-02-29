@@ -28,6 +28,7 @@ import FacilityManagement from "./screens/healthAdmin/facilityManagement";
 import StaffManagement from "./screens/healthAdmin/staffManagement";
 import IncidentResponse from "./screens/healthAdmin/incidentResponse";
 import ComplainceOversight from "./screens/healthAdmin/complainceOversight";
+import EPrescriptions from "./screens/healthCareProvider/eprescriptions";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -151,6 +152,11 @@ const ROUTES_ARRAY = [
   {
     path: "/complianceoversight",
     element: <ComplainceOversight />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/eprescriptions",
+    element: <EPrescriptions />,
     errorElement: <ErrorPage />,
   },
 ];
