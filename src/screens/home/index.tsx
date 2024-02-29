@@ -82,7 +82,11 @@ function HomeScreen() {
   const userMenu = getMenuItemsByRole(ROLES.GUEST);
   return (
     <Box>
-      <NavBar menuarray={userMenu} isLoginButtonRequired={true} />
+      <NavBar
+        menuarray={userMenu}
+        isLoginButtonRequired={true}
+        isLogoutButtonRequired={false}
+      />
       <Box px={4}>
         <ImageSlider slides={SLIDEDATA} />
         <Divider />

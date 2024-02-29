@@ -7,6 +7,7 @@ interface Props {
     id: string;
   }[];
   isLoginButtonRequired?: boolean;
+  isLogoutButtonRequired?: boolean;
 }
 const NavBar = (props: Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,6 +21,7 @@ const NavBar = (props: Props) => {
         menuarray={props.menuarray}
         isOpen={isOpen}
         isLoginButtonRequired={props.isLoginButtonRequired}
+        isLogoutButtonRequired={props.isLogoutButtonRequired ?? true}
       />
     </NavBarContainer>
   );
@@ -69,6 +71,7 @@ const MenuLinks = ({
   isOpen,
   menuarray = [],
   isLoginButtonRequired = false,
+  isLogoutButtonRequired = true,
 }) => {
   return (
     <Box
@@ -100,6 +103,25 @@ const MenuLinks = ({
               }}
             >
               LOGIN
+            </Button>
+          </MenuItem>
+        )}
+        {isLogoutButtonRequired && (
+          <MenuItem to="/">
+            <Button
+              onClick={() => {
+                localStorage.clear();
+              }}
+              size="sm"
+              rounded="md"
+              color={"teal"}
+              bg={"white"}
+              _hover={{
+                color: "teal.900",
+                bg: "teal.50",
+              }}
+            >
+              LOGOUT
             </Button>
           </MenuItem>
         )}

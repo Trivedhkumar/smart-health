@@ -75,7 +75,7 @@ const SignUpScreen = () => {
 
   return (
     <Box width="100wh" backgroundColor="gray.200" height="100vh">
-      <NavBar menuarray={userMenu} />
+      <NavBar menuarray={userMenu} isLogoutButtonRequired={false} />
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <Stack
           flexDir="column"
