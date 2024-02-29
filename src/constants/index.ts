@@ -126,17 +126,17 @@ export const HEALTHCARE_PROVIDERS_MENU = [
   },
   {
     name: "Secure Messaging",
-    link: "/",
+    link: "/securemessaging",
     id: "secure_messaging",
   },
   {
     name: "Professional Collaboration",
-    link: "/",
+    link: "/professionalcollaboration",
     id: "professional_collaboration",
   },
   {
     name: "Analytics Dashboard",
-    link: "/",
+    link: "/analyticsdashboard",
     id: "analytics_dashboard",
   },
 ];

@@ -72,7 +72,7 @@ const CommunicationScreen = () => {
                 justifyContent="space-between"
                 _hover={{ bg: "gray.100" }}
               >
-                {message.role !== role && <Box></Box>}
+                {message.sender !== "You" && <Box></Box>}
                 <Box>
                   <Text fontWeight="bold">{message.sender}</Text>
                   <Text fontSize="sm">{message.message}</Text>
