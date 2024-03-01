@@ -9,7 +9,6 @@ const DashboardScreen = () => {
   const navigate = useNavigate();
   const handleNavigate = useCallback(
     (role) => {
-      window.location.reload();
       switch (role) {
         case ROLES.PATIENT:
           return navigate("/symptomchecker");
