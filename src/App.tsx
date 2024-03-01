@@ -30,6 +30,7 @@ import IncidentResponse from "./screens/healthAdmin/incidentResponse";
 import ComplainceOversight from "./screens/healthAdmin/complainceOversight";
 import EPrescriptions from "./screens/healthCareProvider/eprescriptions";
 import AnalyticsDashboard from "./screens/healthCareProvider/analyticsDashboard";
+import PatientRecords from "./screens/healthCareProvider/accessToThePatientHealthRecords";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -168,6 +169,11 @@ const ROUTES_ARRAY = [
   {
     path: "/analyticsdashboard",
     element: <AnalyticsDashboard />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/accesstopatienthealthrecords",
+    element: <PatientRecords />,
     errorElement: <ErrorPage />,
   },
 ];

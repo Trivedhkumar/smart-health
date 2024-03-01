@@ -58,6 +58,8 @@ const defaultFormValues = {
   frequency: "",
   instructions: "",
 };
+type ValidationSchema = z.infer<typeof validationSchema>;
+
 const dummyPrescriptions = [
   {
     id: 1,
@@ -83,8 +85,6 @@ const dummyPrescriptions = [
   },
   // ... Add more dummy prescriptions
 ];
-
-type ValidationSchema = z.infer<typeof validationSchema>;
 
 const EPrescriptions = () => {
   const [prescriptions, setPrescriptions] = useState(dummyPrescriptions);

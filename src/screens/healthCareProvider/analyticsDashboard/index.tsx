@@ -12,17 +12,7 @@ import {
 import React from "react";
 import { NavBar } from "../../../components";
 import { getMenuItemsByRole } from "../../../utils/functions";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  Legend,
-  YAxis,
-  Rectangle,
-  Tooltip,
-  PieChart,
-  Pie,
-} from "recharts";
+import { Tooltip, PieChart, Pie } from "recharts";
 import { data01, data02, data03, data04, data05 } from "./constants";
 const AnalyticsDashboard = () => {
   const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
