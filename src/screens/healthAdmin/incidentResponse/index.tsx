@@ -20,13 +20,12 @@ import {
   Badge,
   Tag,
   FormControl,
-  Input,
   FormHelperText,
   Select,
   Button,
   useToast,
 } from "@chakra-ui/react";
-import { FaExclamationCircle, FaClipboardList, FaEdit } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { NavBar } from "../../../components";
 import { getMenuItemsByRole } from "../../../utils/functions";
 import { useForm } from "react-hook-form";
@@ -68,7 +67,6 @@ const IncidentResponse = () => {
   const {
     handleSubmit,
     register,
-    control,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ValidationSchema>({

@@ -10,7 +10,6 @@ import {
   ForgotPasswordScreen,
   HomeScreen,
   LoginScreen,
-  MedicationRemainderScreen,
   PersonalHealthRecordScreen,
   PrescriptionManagementScreen,
   SignUpScreen,
