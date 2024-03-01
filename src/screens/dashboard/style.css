@@ -1,0 +1,48 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines if needed */
+  padding: 1rem;
+}
+
+.dashboard__widget {
+  margin: 0.5rem; /* Add some spacing between widgets */
+  padding: 1rem;
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff;
+  min-width: 250px; /* Set minimum width for each widget */
+}
+
+.dashboard__widget__header {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally with space between */
+  align-items: center; /* Align items vertically in the center */
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd; /* Divider line */
+}
+
+.dashboard__widget__title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.dashboard__widget__content {
+  padding-top: 0.5rem; /* Spacing above content */
+}
+
+.dashboard__widget__chart {
+  /* Replace with styles specific to your chosen charting library */
+  height: 150px;
+  width: 100%;
+}
+
+.dashboard__widget__data {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally with space between */
+  align-items: center; /* Align items vertically in the center */
+  padding-top: 0.5rem; /* Spacing below content */
+}
+
+.dashboard__widget__data-item {
+  font-weight: bold;
+}

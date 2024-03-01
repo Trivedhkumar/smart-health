@@ -1,0 +1,73 @@
+.health-records {
+  /* Container for the entire component */
+  display: flex;
+  flex-direction: column;
+  /* Adjust based on desired layout */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.health-records__header {
+  /* Container for the header section */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.health-records__header__title {
+  /* Styles for the header title */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.health-records__search {
+  /* Container for search functionality (optional) */
+  display: flex;
+  align-items: center;
+}
+
+.health-records__search-input {
+  /* Styles for the search input field */
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1; /* Allow input to grow and fill available space */
+}
+
+.health-records__list {
+  /* Container for the list of health records */
+  flex: 1; /* Allow list to fill remaining space */
+  overflow-y: auto; /* Enable scrolling for long lists */
+  padding: 1rem;
+}
+
+.health-records__item {
+  /* Styles for individual health record entries */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.health-records__item:hover {
+  /* Hover effect for individual items */
+  background-color: #eee;
+}
+
+.health-records__item__title {
+  /* Styles for the record title */
+  font-weight: bold;
+}
+
+.health-records__item__date {
+  /* Styles for the record date (optional) */
+  color: #ccc;
+  font-size: 0.9rem;
+}

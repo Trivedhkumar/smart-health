@@ -1,0 +1,101 @@
+.user-management {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-management__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-management__header__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-management__search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.user-management__search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.user-management__search button {
+  border: none;
+  outline: none;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.user-management__search button:hover {
+  background-color: #ccc;
+}
+
+.user-management__list {
+  flex: 1;
+  overflow-y: auto; /* Enable scrolling for large lists */
+}
+
+.user-management__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.user-management__list-item:hover {
+  background-color: #eee;
+}
+
+.user-management__list-item__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-management__list-item__name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-management__list-item__email {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.user-management__list-item__actions {
+  display: flex;
+  gap: 0.5rem; /* Add some space between buttons */
+}
+
+.user-management__list-item__button {
+  border: none;
+  outline: none;
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.user-management__list-item__button:hover {
+  background-color: #ddd;
+}

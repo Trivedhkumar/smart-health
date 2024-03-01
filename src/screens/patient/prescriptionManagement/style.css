@@ -1,0 +1,78 @@
+.prescription-management {
+  /* Container for the entire component */
+  padding: 1rem;
+}
+
+.prescription-management__search {
+  /* Container for search bar and filter options */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.prescription-management__search-bar {
+  /* Styles for the search bar input */
+  flex: 1; /* Allow search bar to fill most of the space */
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.prescription-management__filters {
+  /* Container for filter options (optional) */
+  margin-left: 1rem;
+  display: flex;
+}
+
+.prescription-management__filter {
+  /* Styles for individual filter elements (optional) */
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.prescription-management__filter.active {
+  /* Styles for the currently selected filter (optional) */
+  background-color: #eee;
+}
+
+.prescription-management__list {
+  /* Container for the list of prescriptions */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.prescription-management__list-item {
+  /* Styles for individual prescription list items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.prescription-management__list-item:hover {
+  /* Styles for hover effect on list items */
+  background-color: #f5f5f5;
+}
+
+.prescription-management__details {
+  /* Container for displaying details of a selected prescription (optional) */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: none; /* Initially hidden */
+}
+
+.prescription-management__details.active {
+  /* Styles for showing details when a prescription is selected (optional) */
+  display: block;
+}

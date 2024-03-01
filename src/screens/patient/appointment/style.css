@@ -1,0 +1,42 @@
+.appointment {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.appointment:hover {
+  background-color: #eee;
+}
+
+.appointment__time {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.appointment__details {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.appointment__title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.appointment__patient {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.appointment__status {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  /* Add styles for different appointment statuses (e.g., confirmed, pending, cancelled) */
+}

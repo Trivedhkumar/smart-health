@@ -1,0 +1,74 @@
+.staff-management {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.staff-management__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.staff-management__header__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.staff-management__header__search {
+  display: flex;
+  align-items: center;
+}
+
+.staff-management__header__search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.staff-management__list {
+  flex: 1; /* Allow list to fill remaining space */
+  overflow-y: auto; /* Enable scrolling for long lists */
+}
+
+.staff-management__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.staff-management__list-item:hover {
+  background-color: #eee;
+}
+
+.staff-management__list-item__details {
+  flex: 1; /* Allow details to fill remaining space */
+}
+
+.staff-management__list-item__name {
+  font-weight: bold;
+}
+
+.staff-management__list-item__actions {
+  display: flex;
+}
+
+.staff-management__list-item__button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.staff-management__list-item__button:hover {
+  background-color: #eee;
+  border-color: #ccc;
+}

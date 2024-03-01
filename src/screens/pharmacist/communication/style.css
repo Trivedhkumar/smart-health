@@ -1,0 +1,65 @@
+.communication {
+  /* Container for the entire communication area */
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.communication__header {
+  /* Container for the header information */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.communication__avatar {
+  /* Styles for the user avatar (optional) */
+  margin-right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+}
+
+.communication__sender {
+  /* Styles for the sender name or information */
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.communication__timestamp {
+  /* Styles for the timestamp (optional) */
+  color: #999;
+  font-size: 0.8rem;
+  margin-left: auto; /* Align to the right */
+}
+
+.communication__content {
+  /* Styles for the main content of the communication */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.communication__actions {
+  /* Container for optional actions (e.g., reply, edit, delete) */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.communication__button {
+  /* Styles for individual action buttons */
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.communication__button:hover {
+  background-color: #eee;
+  border-color: #ccc;
+}

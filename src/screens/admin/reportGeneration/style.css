@@ -1,0 +1,65 @@
+.report-generator {
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.report-generator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.report-generator__title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.report-generator__filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.report-generator__filter {
+  margin: 0.5rem 1rem;
+}
+
+.report-generator__filter-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.report-generator__input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px; /* Adjust width as needed */
+}
+
+.report-generator__select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px; /* Adjust width as needed */
+}
+
+.report-generator__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.report-generator__button:hover {
+  background-color: #0067cc;
+}
+
+.report-generator__content {
+  padding: 1rem;
+}

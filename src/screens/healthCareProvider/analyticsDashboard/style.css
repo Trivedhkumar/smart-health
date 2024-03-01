@@ -1,0 +1,36 @@
+.access-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.access-dashboard__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.access-dashboard__description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.access-dashboard__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.access-dashboard__button:hover {
+  background-color: #0067cc;
+}

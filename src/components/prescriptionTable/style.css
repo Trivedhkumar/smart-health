@@ -1,0 +1,20 @@
+.prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prescription-table th,
+.prescription-table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.prescription-table thead th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.prescription-table tbody tr:nth-child(even) {
+  background-color: #eee;
+}

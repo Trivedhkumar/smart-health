@@ -1,0 +1,48 @@
+.compliance-oversight {
+  /* Container for the entire component */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.compliance-oversight__header {
+  /* Container for the header section */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.compliance-oversight__title {
+  /* Styles for the component title */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.compliance-oversight__status {
+  /* Styles for the compliance status indicator */
+  /* Add specific styles based on desired visual representation (e.g., colors, icons) */
+}
+
+.compliance-oversight__content {
+  /* Container for the component content */
+  padding: 1rem 0;
+}
+
+.compliance-oversight__list {
+  /* Styles for the list of compliance items (optional) */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compliance-oversight__list-item {
+  /* Styles for individual compliance items (optional) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+}

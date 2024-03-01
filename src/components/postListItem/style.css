@@ -1,0 +1,35 @@
+.post-list__item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.post-list__item:hover {
+  background-color: #eee;
+}
+
+.post-list__item__avatar {
+  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.post-list__item__content {
+  flex: 1;
+}
+
+.post-list__item__title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-list__item__excerpt {
+  color: #666;
+  font-size: 0.9rem;
+}

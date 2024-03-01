@@ -1,0 +1,46 @@
+.healthcare-provider {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.healthcare-provider__avatar {
+  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+}
+
+.healthcare-provider__info {
+  flex: 1;
+}
+
+.healthcare-provider__name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.healthcare-provider__specialty {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.healthcare-provider__rating {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.healthcare-provider__rating__star {
+  color: #f80;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.healthcare-provider__rating__count {
+  color: #666;
+  font-size: 0.8rem;
+}

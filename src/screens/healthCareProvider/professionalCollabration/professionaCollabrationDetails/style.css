@@ -1,0 +1,107 @@
+.collaboration {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.collaboration__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.collaboration__header__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.collaboration__header__actions {
+  display: flex;
+}
+
+.collaboration__header__button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  margin-left: 1rem;
+}
+
+.collaboration__header__button:hover {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+.collaboration__content {
+  flex: 1; /* Allow content to fill remaining space */
+  padding: 1rem;
+}
+
+.collaboration__message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collaboration__message-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.collaboration__message-list-item__avatar {
+  margin-right: 1rem;
+  /* Add styling for avatar image or icon */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+}
+
+.collaboration__message-list-item__content {
+  flex: 1;
+}
+
+.collaboration__message-list-item__author {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.collaboration__message-list-item__message {
+  color: #333;
+}
+
+.collaboration__message-form {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.collaboration__message-form__input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.collaboration__message-form__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.collaboration__message-form__button:hover {
+  background-color: #0067cc;
+}

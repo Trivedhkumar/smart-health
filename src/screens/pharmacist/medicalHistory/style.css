@@ -1,0 +1,58 @@
+.medical-history {
+  /* Container for the entire medical history section */
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.medical-history__title {
+  /* Styles for the title of the medical history section */
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.medical-history__section {
+  /* Container for individual sections within the history (e.g., allergies, medications) */
+  margin-bottom: 1rem;
+}
+
+.medical-history__section-title {
+  /* Styles for the title of each individual section */
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.medical-history__list {
+  /* Container for a list of items within each section */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.medical-history__list-item {
+  /* Styles for individual items in the list */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.medical-history__list-item:last-child {
+  /* Remove bottom border for the last item */
+  border-bottom: none;
+}
+
+.medical-history__list-item__term {
+  /* Styles for the term (e.g., allergy name, medication name) */
+  font-weight: bold;
+}
+
+.medical-history__list-item__details {
+  /* Styles for additional details about the term (e.g., dosage, notes) */
+  color: #666;
+  font-size: 0.9rem;
+}

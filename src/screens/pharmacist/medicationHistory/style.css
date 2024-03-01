@@ -1,0 +1,86 @@
+.medication-history {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.medication-history__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.medication-history__header__title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.medication-history__header__actions {
+  display: flex;
+}
+
+.medication-history__header__button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.medication-history__header__button:hover {
+  background-color: #ddd;
+}
+
+.medication-history__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.medication-history__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.medication-history__item:last-child {
+  border-bottom: none;
+}
+
+.medication-history__item__details {
+  flex: 1;
+}
+
+.medication-history__item__name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.medication-history__item__info {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.medication-history__item__actions {
+  display: flex;
+}
+
+.medication-history__item__button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.medication-history__item__button:hover {
+  color: #007bff;
+}

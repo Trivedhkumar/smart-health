@@ -1,0 +1,62 @@
+.eprescriptions-dashboard {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive grid layout */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.eprescriptions-dashboard__card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.eprescriptions-dashboard__card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.eprescriptions-dashboard__card__title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.eprescriptions-dashboard__card__actions {
+  display: flex;
+}
+
+.eprescriptions-dashboard__card__action {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease-in-out;
+}
+
+.eprescriptions-dashboard__card__action:hover {
+  color: #007bff;
+}
+
+.eprescriptions-dashboard__card__content {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap if necessary */
+}
+
+.eprescriptions-dashboard__card__info {
+  flex: 1; /* Allow content to fill available space */
+  margin-bottom: 0.5rem;
+}
+
+.eprescriptions-dashboard__card__info-label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.eprescriptions-dashboard__card__info-value {
+  color: #666;
+}
