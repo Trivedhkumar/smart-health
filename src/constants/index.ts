@@ -21,6 +21,11 @@ export const PATIENT_MENU = [
     id: "symptom_checker",
   },
   {
+    name: "Medication Remainder",
+    link: "/medicationremainder",
+    id: "symptom_checker",
+  },
+  {
     name: "Personal Health Records (PHR):",
     link: "/personalhealthrecords",
     id: "personal_health_records",

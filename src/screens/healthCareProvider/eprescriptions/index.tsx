@@ -217,7 +217,7 @@ const EPrescriptions = () => {
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>
-              {!selectedPrescription ? "Add Facility" : "Edit Facility"}
+              {!selectedPrescription ? "Add Prescription" : "Edit Prescription"}
               <ModalCloseButton />
             </ModalHeader>
             <ModalBody>

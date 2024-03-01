@@ -3,7 +3,6 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
-  FormLabel,
   Heading,
   HStack,
   Input,
@@ -14,13 +13,11 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
   Stack,
   Table,
   TableContainer,
   Tbody,
   Td,
-  Textarea,
   Th,
   Thead,
   Tr,
@@ -30,11 +27,10 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { startCase } from "lodash";
 import React, { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { NavBar } from "../../../components";
 import { getMenuItemsByRole } from "../../../utils/functions";
-import { DOCTORS } from "../../home/constants";
 import { HEALTHCARE_PROVIDERS } from "./constants";
 const validationSchema = z.object({
   name: z.string().min(1, { message: "Please enter the name" }),
@@ -62,12 +58,23 @@ const HealthCareProviderManagement = () => {
     );
     onOpen();
   };
+  const handleDelete = (id: number | string) => {
+    setHealthCareProviders(
+      healthCareProviders.filter((user) => user.id !== id)
+    );
+    toast({
+      title: "Deleted successfully",
+      description: "We've deleted the details for you.",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+    });
+  };
   const handleClose = () => {
     reset();
     onClose();
   };
   const {
-    control,
     handleSubmit,
     formState: { isSubmitting, errors },
     reset,
@@ -115,12 +122,20 @@ const HealthCareProviderManagement = () => {
                   <Td>{user.email}</Td>
                   <Td>{startCase(user.mobile)}</Td>
                   <Td>
-                    <Button
-                      onClick={() => handleEdit(user.id)}
-                      colorScheme={"teal"}
-                    >
-                      Edit
-                    </Button>
+                    <HStack spacing={2}>
+                      <Button
+                        onClick={() => handleEdit(user.id)}
+                        colorScheme={"teal"}
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        onClick={() => handleDelete(user.id)}
+                        colorScheme={"red"}
+                      >
+                        Delete
+                      </Button>
+                    </HStack>
                   </Td>
                 </Tr>
               ))}
