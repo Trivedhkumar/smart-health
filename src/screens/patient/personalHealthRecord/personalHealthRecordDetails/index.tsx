@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Heading,
   ListItem,
   Stack,
   Tab,
@@ -21,10 +20,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { NavBar } from "../../../../components";
 import { getMenuItemsByRole } from "../../../../utils/functions";
-import { ROLES } from "../../../../constants";
-import { PERSONAL_HEALTH_RECORDS } from "../constants";
 import { PHRData } from "./constants";
-import { isString, upperCase, upperFirst } from "lodash";
+import { isString, upperFirst } from "lodash";
 import PrescriptionTable from "../../../../components/prescriptionTable";
 
 const PersonalHealthRecordsDetailsScreen = () => {

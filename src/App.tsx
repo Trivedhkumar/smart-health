@@ -31,6 +31,8 @@ import ComplainceOversight from "./screens/healthAdmin/complainceOversight";
 import EPrescriptions from "./screens/healthCareProvider/eprescriptions";
 import AnalyticsDashboard from "./screens/healthCareProvider/analyticsDashboard";
 import PatientRecords from "./screens/healthCareProvider/accessToThePatientHealthRecords";
+import ProfessionalCollabration from "./screens/healthCareProvider/professionalCollabration";
+import ProfessionalCollabrationDetails from "./screens/healthCareProvider/professionalCollabration/professionaCollabrationDetails";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -174,6 +176,16 @@ const ROUTES_ARRAY = [
   {
     path: "/accesstopatienthealthrecords",
     element: <PatientRecords />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/professionalcollaboration",
+    element: <ProfessionalCollabration />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/professionalcollaboration/:id",
+    element: <ProfessionalCollabrationDetails />,
     errorElement: <ErrorPage />,
   },
 ];

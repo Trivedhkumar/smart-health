@@ -8,14 +8,18 @@ import {
   Stack,
   FormControl,
   FormErrorMessage,
+  List,
 } from "@chakra-ui/react";
-import { NavBar } from "../../../components";
-import { getMenuItemsByRole } from "../../../utils/functions";
-import { messages as messagesData } from "./constants";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { v4 as uuidv4 } from "uuid";
+import { getMenuItemsByRole } from "../../../../utils/functions";
+import { NavBar } from "../../../../components";
+import PostListItem from "../../../../components/postListItem";
+import { postsData } from "../constants";
+import { useParams } from "react-router-dom";
+import { messages as messageData } from "./constants";
 
 const validationSchema = z.object({
   message: z.string().min(1, { message: "Message can't be empty" }),
@@ -25,10 +29,11 @@ type ValidationSchema = z.infer<typeof validationSchema>;
 const defaultFormValues = {
   message: "",
 };
-const CommunicationScreen = () => {
-  const [messages, setMessages] = useState(messagesData);
+const ProfessionalCollabrationDetails = () => {
+  const [messages, setMessages] = useState(messageData);
   const role = localStorage.getItem("user");
   const userMenu = getMenuItemsByRole(role);
+  const { id } = useParams();
   const {
     handleSubmit,
     formState: { isSubmitting, errors },
@@ -50,12 +55,18 @@ const CommunicationScreen = () => {
         timestamp: new Date().toLocaleString(),
       },
     ]);
+    console.log(values);
     reset();
   };
+  const post = postsData.find((post) => post.id.toString() === id);
+
   return (
     <Box>
       <NavBar menuarray={userMenu} />
       <Stack maxWidth={"90%"} margin={"auto"} spacing={4}>
+        <List spacing={4}>
+          <PostListItem post={post} />
+        </List>
         <Box
           mb={4}
           bg="gray.50"
@@ -65,13 +76,7 @@ const CommunicationScreen = () => {
         >
           <Box>
             {messages.map((message) => (
-              <Flex
-                p={4}
-                key={message.id}
-                justifyContent="space-between"
-                _hover={{ bg: "gray.100" }}
-              >
-                {message.sender !== "You" && <Box></Box>}
+              <Flex p={4} key={message.id} _hover={{ bg: "gray.100" }}>
                 <Box>
                   <Text fontWeight="bold">{message.sender}</Text>
                   <Text fontSize="sm">{message.message}</Text>
@@ -105,7 +110,7 @@ const CommunicationScreen = () => {
             variant="solid"
             colorScheme="teal"
           >
-            Send
+            Comment
           </Button>
         </form>
       </Stack>
@@ -113,4 +118,4 @@ const CommunicationScreen = () => {
   );
 };
 
-export default CommunicationScreen;
+export default ProfessionalCollabrationDetails;
