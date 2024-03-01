@@ -25,6 +25,7 @@ import {
   Textarea,
   VStack,
   chakra,
+  useToast,
 } from "@chakra-ui/react";
 import { ImageSlider, NavBar } from "../../components";
 import {
@@ -62,6 +63,7 @@ function HomeScreen() {
       .min(3, { message: ERROR_MESSAGES.minLength })
       .max(30, { message: ERROR_MESSAGES.maxLength }),
   });
+  const toast = useToast();
   const CaFaCheckCircle = chakra(FaCheckCircle);
   const CFaUserAlt = chakra(FaUserAlt);
   const CFaMail = chakra(FaMailBulk);
@@ -69,6 +71,7 @@ function HomeScreen() {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
     mode: "onBlur",
@@ -78,6 +81,14 @@ function HomeScreen() {
   const onSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(values);
+    reset();
+    toast({
+      title: "Message sent successfully",
+      description: "We've sent your message for you.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
   };
   const userMenu = getMenuItemsByRole(ROLES.GUEST);
   return (
