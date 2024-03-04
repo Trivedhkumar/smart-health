@@ -12,11 +12,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { NavBar } from "../../../components";
+import { ROLES } from "../../../constants";
 import { camelCaseToTitle, getMenuItemsByRole } from "../../../utils/functions";
 import { invoices } from "./constants";
 
 const MedicationDispenseScreen = () => {
-  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+  const userMenu = getMenuItemsByRole(ROLES.PHARMACIST);
 
   return (
     <Box>

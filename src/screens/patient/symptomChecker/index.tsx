@@ -19,6 +19,7 @@ import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { NavBar } from "../../../components";
 import { CustomModal } from "../../../components/modal";
+import { ROLES } from "../../../constants";
 import { getMenuItemsByRole } from "../../../utils/functions";
 const symptomOptions = [
   {
@@ -42,7 +43,7 @@ const symptomOptions = [
     value: 5,
   },
 ];
-const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+const userMenu = getMenuItemsByRole(ROLES.PATIENT);
 
 const symptomSchema = z.object({
   label: z.string(),

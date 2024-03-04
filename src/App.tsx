@@ -34,6 +34,7 @@ import PatientRecords from "./screens/healthCareProvider/accessToThePatientHealt
 import ProfessionalCollabration from "./screens/healthCareProvider/professionalCollabration";
 import ProfessionalCollabrationDetails from "./screens/healthCareProvider/professionalCollabration/professionaCollabrationDetails";
 import MedicationRemainder from "./screens/patient/medicationRemainder";
+import ChatScreen from "./screens/patient/chat";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -101,6 +102,11 @@ const ROUTES_ARRAY = [
   {
     path: "/prescriptionmanagement",
     element: <PrescriptionManagementScreen />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/chat",
+    element: <ChatScreen />,
     errorElement: <ErrorPage />,
   },
   // admin

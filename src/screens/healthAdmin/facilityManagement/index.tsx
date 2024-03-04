@@ -36,6 +36,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CreatableSelect } from "chakra-react-select";
 import { v4 as uuidv4 } from "uuid";
+import { ROLES } from "../../../constants";
 
 const facilitiesData = [
   // Replace with actual facility data
@@ -194,7 +195,7 @@ const FacilityManagement = () => {
     //   },
     // ]);
   };
-  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+  const userMenu = getMenuItemsByRole(ROLES.HEALTH_ADMINISTRATOR);
   const handleAddFacility = () => {
     setSelectedFacility(null);
     onOpen();

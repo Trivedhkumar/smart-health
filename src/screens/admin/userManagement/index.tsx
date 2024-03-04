@@ -17,13 +17,14 @@ import {
 import { startCase } from "lodash";
 import React, { useState } from "react";
 import { NavBar } from "../../../components";
+import { ROLES } from "../../../constants";
 import { getMenuItemsByRole } from "../../../utils/functions";
 import { USERS } from "./constants";
 
 const UserManagementScreen = () => {
   const [users, setUsers] = useState(USERS);
   const toast = useToast();
-  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+  const userMenu = getMenuItemsByRole(ROLES.ADMINISTRATOR);
   const handleActivate = (id: number | string) => {
     setUsers(
       users.map((user) =>

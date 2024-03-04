@@ -13,17 +13,17 @@ const ReportGeneration = () => {
     <Box>
       <NavBar menuarray={userMenu} />
       <Stack maxWidth={"90%"} margin={"auto"} spacing={4}>
-        <Heading as={"h3"} size={"md"}>
-          Report Generation
-        </Heading>
-        <div ref={targetRef}>
-          <MetricsReport />
-        </div>
-        <HStack justifyContent="flex-end" alignItems={"center"}>
+        <HStack justifyContent="space-between" alignItems={"center"}>
+          <Heading as={"h3"} size={"md"}>
+            Report Generation
+          </Heading>
           <Button onClick={() => toPDF()} colorScheme={"teal"}>
             Download Report
           </Button>
         </HStack>
+        <div ref={targetRef}>
+          <MetricsReport />
+        </div>
       </Stack>
     </Box>
   );

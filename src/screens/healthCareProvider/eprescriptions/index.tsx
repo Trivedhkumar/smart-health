@@ -33,6 +33,7 @@ import { NavBar } from "../../../components";
 import { getMenuItemsByRole } from "../../../utils/functions";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { ROLES } from "../../../constants";
 
 const mockPatients = [
   { id: 1, name: "John Doe" },
@@ -138,7 +139,7 @@ const EPrescriptions = () => {
     reset();
     onClose();
   };
-  const userMenu = getMenuItemsByRole(localStorage.getItem("user"));
+  const userMenu = getMenuItemsByRole(ROLES.HEALTHCARE_PROVIDERS);
 
   return (
     <Box>

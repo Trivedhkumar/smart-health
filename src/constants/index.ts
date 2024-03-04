@@ -26,7 +26,7 @@ export const PATIENT_MENU = [
     id: "symptom_checker",
   },
   {
-    name: "Personal Health Records (PHR):",
+    name: "PHR",
     link: "/personalhealthrecords",
     id: "personal_health_records",
   },
@@ -44,6 +44,11 @@ export const PATIENT_MENU = [
     name: "Prescription Management",
     link: "/prescriptionmanagement",
     id: "prescription_management",
+  },
+  {
+    name: "Chat",
+    link: "/chat",
+    id: "chat",
   },
 ];
 
