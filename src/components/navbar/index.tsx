@@ -59,7 +59,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
 
 const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
-    <Link href={to}>
+    <Link target={to.startsWith("http") ? "_blank" : undefined} href={to}>
       <Text display="block" {...rest}>
         {children}
       </Text>

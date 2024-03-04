@@ -171,6 +171,11 @@ export const HOME_MENU = [
     link: "/#contactus",
     id: "contact_us",
   },
+  {
+    name: "BLOG",
+    link: "https://kxr4121.uta.cloud/blog/",
+    id: "blog",
+  },
 ];
 // Roles of users
 export const ROLES = {
