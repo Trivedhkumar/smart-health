@@ -16,38 +16,16 @@ import {
   ModalHeader,
   ModalOverlay,
   Select,
+  SimpleGrid,
   Stack,
-  Tab,
-  Table,
-  TableCaption,
-  TableContainer,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Tbody,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
+  Text,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
 import { NavBar } from "../../../components";
-import ScheduledAppointments from "../appointment/scheduledAppointments";
 import { getMenuItemsByRole } from "../../../utils/functions";
-import { ROLES } from "../../../constants";
-import MedicalHistory from "../appointment/medicalHistory";
-import PrescriptionManagementScreen from "../prescriptionManagement";
 import { PERSONAL_HEALTH_RECORDS } from "./constants";
-import {
-  FaArrowRight,
-  FaEdit,
-  FaEye,
-  FaStreetView,
-  FaTrash,
-} from "react-icons/fa";
+
 import { z } from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -55,6 +33,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { DOCTORS } from "../../home/constants";
 import { useNavigate } from "react-router-dom";
+import PersonalHealthRecordsDetailsScreen from "./personalHealthRecordDetails";
 const validationSchema = z.object({
   doctor: z.string().min(1, { message: "Please select a doctor" }),
   timestamp: z.date(),
@@ -114,20 +93,71 @@ const PersonalHealthRecordScreen = () => {
       <Stack maxWidth={"90%"} margin={"auto"} spacing={4}>
         <HStack justifyContent={"space-between"} alignItems="center">
           <Heading as="h3" size="md">
-            Personal Health Records
+            Patient Health Record
           </Heading>
-          <Button
-            colorScheme="teal"
-            mt={4}
-            onClick={openAppointmentModal}
-            isLoading={isSubmitting}
-            rightIcon={<FaArrowRight />}
-          >
-            Create a new PHR
-          </Button>
         </HStack>
-
-        <TableContainer>
+        <SimpleGrid columns={2} spacing={10}>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Name</Text>
+              <Text>{" : John "}</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Birth Date</Text>
+              <Text> : 25-07-1998</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Mobile</Text>
+              <Text> : +91-84932483439</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Email</Text>
+              <Text> : johndoe@gmail.com</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Emergency Contact</Text>
+              <Text> : +91-7982930293</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Primary Doctor</Text>
+              <Text> : Rambul rode</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Address</Text>
+              <Text>
+                {" "}
+                : 1/356,jain street, main 5th road, rumbel street, dallas, USA -
+                234678
+              </Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Pharmacy</Text>
+              <Text> : Smart health pharmacy</Text>
+            </HStack>
+          </Box>
+          <Box>
+            <HStack>
+              <Text as={"b"}>Blood Group Type</Text>
+              <Text> : A+</Text>
+            </HStack>
+          </Box>
+        </SimpleGrid>
+        <PersonalHealthRecordsDetailsScreen />
+        {/* <TableContainer>
           <Table variant="simple">
             <Thead>
               <Tr>
@@ -164,7 +194,7 @@ const PersonalHealthRecordScreen = () => {
               ))}
             </Tbody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
 
         {/* <Tabs>
           <TabList>
