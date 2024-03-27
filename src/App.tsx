@@ -35,6 +35,7 @@ import ProfessionalCollabration from "./screens/healthCareProvider/professionalC
 import ProfessionalCollabrationDetails from "./screens/healthCareProvider/professionalCollabration/professionaCollabrationDetails";
 import MedicationRemainder from "./screens/patient/medicationRemainder";
 import ChatScreen from "./screens/patient/chat";
+import HPChatScreen from "./screens/healthCareProvider/chat";
 const ROUTES_ARRAY = [
   {
     path: "/login",
@@ -177,7 +178,7 @@ const ROUTES_ARRAY = [
   },
   {
     path: "/securemessaging",
-    element: <CommunicationScreen />,
+    element: <HPChatScreen />,
     errorElement: <ErrorPage />,
   },
   {

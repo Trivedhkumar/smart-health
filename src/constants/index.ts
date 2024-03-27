@@ -186,6 +186,15 @@ export const ROLES = {
   PATIENT: "patient",
   GUEST: "guest",
 };
+
+export const ROLES_ID = {
+  PATIENT_ROLE_ID: 1,
+  GUEST_ROLE_ID: 1,
+  HEALTHCARE_PROVIDERS_ROLE_ID: 2,
+  PHARMACIST_ROLE_ID: 3,
+  HEALTH_ADMINISTRATOR_ROLE_ID: 4,
+  ADMINISTRATOR_ROLE_ID: 5,
+};
 // Corousel Images
 export const SLIDEDATA: SLIDE_DATA_TYPE = [
   {
