@@ -27,7 +27,7 @@ interface Message {
   sent_at: string;
 }
 
-const ChatScreen: React.FC = () => {
+const HPChatScreen: React.FC = () => {
   const currentUserId = parseInt(localStorage.getItem("userID"));
   const [users, setUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -39,7 +39,7 @@ const ChatScreen: React.FC = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "http://127.0.0.1:8000/api/users/doctors-and-pharmacists"
+          "http://127.0.0.1:8000/api/users/patients-and-pharmacists"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch users");
@@ -237,4 +237,4 @@ const ChatScreen: React.FC = () => {
   );
 };
 
-export default ChatScreen;
+export default HPChatScreen;
